@@ -1,0 +1,4177 @@
+/** @format */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: Quicksand !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: Quicksand !important;
+}
+
+html {
+  font-family: Quicksand !important;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+.fa-trash {
+  color: red;
+  cursor: pointer;
+}
+
+.iCOn {
+  transition: 0.5s;
+  box-shadow: none;
+  transform: scale(1);
+}
+.cardDiv {
+  cursor: pointer;
+  width: 350px;
+}
+.CardDiv_Container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cardDiv:hover .iCOn {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transform: scale(1.3);
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.profileImage {
+  width: 100px;
+}
+.fa-eye {
+  color: #029aff;
+  cursor: pointer;
+}
+.fa-edit {
+  cursor: pointer;
+  color: blue;
+}
+
+.View {
+  border: 1px solid black;
+  width: 100%;
+  padding: 10px;
+}
+
+.main-card--container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 500px));
+  grid-gap: 50px;
+  justify-content: space-around;
+}
+.card-container {
+  margin: 25px 0 auto;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.myEdit:focus {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.AstroLogin {
+  color: #fff;
+  background-color: #2b7a8e;
+  padding: 10px;
+  width: 380px;
+  text-align: center;
+  font-size: 20px;
+  background: linear-gradient(to left, #2b7a8e 50%, #fff 50%) right;
+  background-size: 200%;
+  transition: 0.5s ease-out;
+  border: 1px solid #2b7a8e;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+.AstroLogin:hover {
+  background-position: left;
+  color: #2b7a8e;
+}
+
+.EcommerceAdminLogin {
+  color: #fff;
+  background-color: #0c0c0c;
+  padding: 10px;
+  width: 380px;
+  text-align: center;
+  font-size: 16px;
+  /* background: linear-gradient(to left, #0c0c0c 50%, #fff 50%) right; */
+  background-size: 200%;
+  transition: 0.5s ease-out;
+  border: 2px solid #0c0c0c;
+  margin-top: 10px;
+}
+
+.forgetPassowrd {
+  width: 380px;
+  text-align: center;
+  color: #fff;
+  background-color: rgb(4, 43, 38);
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+/* .EcommerceAdminLogin:hover {
+  background-position: left;
+  color: #0c0c0c;
+  font-weight: bold;
+}
+.EcommerceAdminLogin:focus {
+  background-position: left;
+  color: #0c0c0c;
+  font-weight: bold;
+} */
+.EcommerceVendorLogin {
+  color: #fff;
+  background-color: #576cbc;
+  padding: 10px;
+  width: 380px;
+  text-align: center;
+  font-size: 20px;
+  background: linear-gradient(to left, #576cbc 50%, #fff 50%) right;
+  background-size: 200%;
+  transition: 0.5s ease-out;
+  border: 1px solid #576cbc;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+
+.EcommerceVendorLogin:hover {
+  background-position: left;
+  color: #576cbc;
+}
+
+.view {
+  background-color: #2196f3;
+  color: #fff;
+  width: 50%;
+  padding: 5px;
+}
+
+.two-sec {
+  display: flex;
+  justify-content: space-evenly;
+  justify-content: space-evenly;
+}
+.two-sec .left {
+  width: 60%;
+  background-color: #f6f1ef;
+  padding: 20px;
+}
+.two-sec .left .head {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.two-sec .right {
+  width: 30%;
+  background-color: #f6f1ef;
+}
+
+.searchDiv {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  border: 1px solid rgb(179, 179, 179);
+  padding: 10px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+.searchDiv input {
+  width: 94%;
+  outline: none;
+  border: none;
+}
+
+.flexCont {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+.flexCont img {
+  width: 60px;
+  background-color: #e9ecef;
+}
+
+.blockContent {
+  display: block;
+}
+.blockContent p {
+  margin: 0;
+}
+
+.checkBox {
+  width: 50px;
+  height: 25px;
+  background-color: #e9ecef;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+}
+.checkBox span {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: #fff;
+  position: absolute;
+  left: 5px;
+  top: 2px;
+}
+.ActivecheckBox {
+  width: 50px;
+  height: 25px;
+  background-color: #0d6efd;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+}
+.ActivecheckBox span {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: #fff;
+  position: absolute;
+  right: 5px;
+  top: 2px;
+}
+
+.fa-eye {
+  color: #0cba73;
+  background-color: #d6f8e8;
+  width: 35px;
+  text-align: center;
+  height: 35px;
+  display: flex;
+  border-radius: 100%;
+  justify-content: center;
+  padding-top: 10px;
+  transition: 0.5s;
+}
+.check-icon {
+  color: #d6f8e8;
+  background-color: #0cba73;
+  width: 35px;
+  text-align: center;
+  height: 35px;
+  display: flex;
+  border-radius: 100%;
+  justify-content: center;
+  padding-top: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.view-icon-container {
+  color: #0cba73;
+  background-color: #d6f8e8;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  border-radius: 100%;
+  justify-content: center;
+  transition: 0.5s;
+  cursor: pointer;
+  align-items: center;
+}
+.view-icon-container svg {
+  width: 20px;
+  height: 20px;
+}
+
+.subscription-icon-container {
+  color: #d6f8e8;
+  background-color: #0cba73;
+  width: 35px;
+  text-align: center;
+  height: 35px;
+  display: flex;
+  border-radius: 100%;
+  justify-content: center;
+  padding-top: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.comment-icon {
+  color: #fff;
+  background-color: #4b86b4;
+  width: 35px;
+  text-align: center;
+  height: 35px;
+  display: flex;
+  border-radius: 100%;
+  justify-content: center;
+  padding-top: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.edit-icon {
+  color: #f4c39c;
+  background-color: #ffebdb;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  border-radius: 100%;
+  justify-content: center;
+  transition: 0.5s;
+  cursor: pointer;
+  align-items: center;
+}
+
+.edit-icon svg {
+  width: 16px;
+  height: 16px;
+}
+.view-icon-container:hover,
+.subscription-icon-container:hover,
+.comment-icon:hover,
+.edit-icon:hover {
+  transform: scale(1.2);
+}
+
+.fa-pen-to-square {
+  color: #f4c39c;
+  background-color: #ffebdb;
+  width: 35px;
+  text-align: center;
+  height: 35px;
+  display: flex;
+  border-radius: 100%;
+  justify-content: center;
+  padding-top: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.fa-comment-sms {
+  color: #fff;
+  background-color: #4b86b4;
+  width: 35px;
+  text-align: center;
+  height: 35px;
+  display: flex;
+  border-radius: 100%;
+  justify-content: center;
+  padding-top: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.fa-trash {
+  color: #df939f;
+  background-color: #ffe1e8;
+  width: 35px;
+  text-align: center;
+  height: 35px;
+  display: flex;
+  border-radius: 100%;
+  justify-content: center;
+  padding-top: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.fa-comment-sms:hover {
+  transform: scale(1.2);
+}
+.fa-trash:hover {
+  transform: scale(1.2);
+}
+.fa-eye:hover {
+  transform: scale(1.2);
+}
+.fa-pen-to-square:hover {
+  transform: scale(1.2);
+}
+.required {
+  color: #e74260;
+}
+
+.headP {
+  /* font-weight: 600; */
+  /* font-size: 25px; */
+  color: #7b7c7d;
+}
+.filterBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid #d4d7dc;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+.filterBox img {
+  width: 30px;
+}
+.filterBox input {
+  width: 100%;
+  border: 1px solid #d4d7dc;
+  outline: none;
+  padding: 5px;
+  color: black;
+  text-transform: capitalize;
+}
+.sectionCont {
+  /* width: 98%; */
+  background-color: #fff;
+  /* margin-left: 2%; */
+  padding: 20px;
+}
+
+.overFlowCont {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.logo {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+.updateProfile {
+  margin-left: 20px;
+  border: 1px solid #fff;
+  border-radius: 100%;
+  font-size: 1.2rem;
+  padding: 10px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.updateProfile:hover {
+  border: 1px solid #19376d;
+  color: #19376d;
+  background-color: #fff;
+}
+
+.Normalbtn {
+  background-color: #19376d !important;
+  border: 1px solid #19376d !important;
+  border-radius: 0px !important;
+}
+
+.ImageCarousel {
+  width: 150px !important;
+  margin: 0px !important;
+  height: 150px !important;
+}
+.CarouselImages {
+  width: 60px;
+  height: auto;
+}
+.CarouselImages img {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.ModalCarousel {
+  width: 100% !important;
+  height: 500px !important;
+}
+.ModalCarousel {
+  width: 100% !important;
+  height: 500px !important;
+}
+.ModalCarousel img {
+  width: 100% !important;
+  height: 500px !important;
+}
+
+.gridCont {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: space-evenly;
+}
+.gridCont div {
+  width: 400px;
+  height: 300px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 10px;
+  position: relative;
+  margin-top: 20px;
+}
+.gridCont div img {
+  width: 100%;
+}
+.delete-Btn {
+  width: 90%;
+  margin-left: 2%;
+  color: #c44b3f;
+  border: 1px solid #c44b3f;
+  position: absolute;
+  bottom: 10px;
+  transition: 0.5s;
+  padding: 10px;
+}
+
+.delete-Btn:hover {
+  background-color: #c44b3f;
+  color: #fff;
+}
+
+.BannerCarousel {
+  width: 300px;
+  margin: 0px !important;
+}
+.BannerCarouselImage {
+  width: 300px;
+}
+.BannerCarouselImage img {
+  width: 100%;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.pagination button {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.activePage {
+  background-color: #19376d;
+  color: #fff;
+  border: 1px solid #19376d !important;
+}
+
+.active {
+  background-color: #fff;
+  color: #19376d !important;
+}
+.prevBtn {
+  background-color: #fff;
+  color: #19376d;
+  border: 1px solid #19376d !important;
+  transition: 0.5s;
+}
+
+.prevBtn:hover,
+.prevBtn:focus,
+.prevBtn:active {
+  background-color: #19376d;
+  color: #fff;
+  border: 1px solid #19376d !important;
+}
+.nextBtn {
+  background-color: #fff;
+  color: #19376d;
+  border: 1px solid #19376d !important;
+  transition: 0.5s;
+}
+
+.nextBtn:hover,
+.nextBtn:focus,
+.nextBtn:active {
+  background-color: #19376d;
+  color: #fff;
+  border: 1px solid #19376d !important;
+}
+
+.dangerBox {
+  position: relative;
+}
+.dangerBox i {
+  position: absolute;
+  top: 50%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.centerImage {
+  max-width: 300px;
+  max-height: 300px;
+}
+.img-cont {
+  display: flex;
+  gap: 40px;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+/* ============== user data styling =========*/
+
+.ud2 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.ud3 {
+  width: 49%;
+}
+.ud4 {
+  width: 49%;
+}
+
+.ud4 button {
+  background: #c44b3f;
+  width: 50%;
+  height: 40px;
+  border-radius: 4px;
+  border: none;
+  color: #fff;
+}
+
+/* ============ single order styling ================*/
+
+#pdfGen {
+  margin: 20px;
+}
+#pdfGen .Heading-Container {
+  display: flex;
+  align-items: center;
+}
+#pdfGen .Heading-Container img {
+  width: 100px;
+}
+#pdfGen .Heading-Container .content {
+  width: 80%;
+  text-align: center;
+}
+#pdfGen .Heading-Container .content h2 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 25px;
+}
+#pdfGen .Heading-Container .content p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #a8a1a1;
+}
+
+.two-cont {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  gap: 20px;
+}
+.two-cont p {
+  margin: 0;
+}
+.two-cont .left {
+  width: 40%;
+}
+.two-cont .left h6 {
+  font-size: 14px;
+  font-weight: bold;
+}
+.two-cont .left .box {
+  border: 2px solid black;
+  width: 100%;
+  padding: 8px;
+}
+.two-cont .left .box p {
+  font-size: 15px;
+}
+.two-cont .left .box .strong {
+  font-weight: bold;
+}
+.two-cont .left .box p {
+  font-weight: 600;
+}
+.two-cont .right {
+  width: 60%;
+  border: 2px solid black;
+  padding: 10px;
+}
+.two-cont .right table {
+  width: 100%;
+  table-layout: fixed;
+}
+.two-cont .right td {
+  font-weight: 900 !important;
+  padding: 5px;
+}
+.bordererd {
+  border-right: 2px solid black;
+}
+#pdfGen .empty {
+  background-color: #000;
+  height: 2px;
+  margin-top: 20px;
+}
+
+#pdfGen {
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+#pdfGen .Table {
+  width: 100%;
+  margin-top: 20px;
+}
+#pdfGen .Table tbody tr {
+  border: 1px solid black;
+}
+#pdfGen .Table tbody tr td {
+  padding: 5px;
+  padding-bottom: 10px;
+}
+
+#pdfGen .Main_Table {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-top: 10px;
+  gap: 50px;
+  align-items: center;
+}
+#pdfGen .Main_Table p {
+  font-weight: 900;
+}
+
+#pdfGen .below_Div .four-sec {
+  display: flex;
+  justify-content: space-evenly;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  padding: 4px;
+}
+#pdfGen .below_Div .four-sec p {
+  margin: 0;
+  font-size: 13px;
+  text-align: center;
+}
+#pdfGen .below_Div .four-sec .stronger {
+  font-weight: bold;
+}
+
+#pdfGen .below_Div .big_Head {
+  font-size: 25px;
+  background-color: #85827b;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+  padding-bottom: 10px;
+}
+#pdfGen .below_Div .text-cont p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 14px;
+  color: #85827b;
+}
+#pdfGen .below_Div .text-cont {
+  text-align: center;
+}
+#pdfGen .below_Div .text-cont h5 {
+  margin: 0;
+  font-weight: 900;
+}
+
+.so2 {
+  width: 100%;
+}
+
+.so4 {
+  display: flex;
+  justify-content: space-between;
+}
+.so4 p {
+  margin: 0;
+}
+
+.searchByDate {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid #d4d7dc;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.searchByDate .btns-container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.searchByDate button {
+  border: 1px solid #d4d7dc;
+  width: 200px;
+  padding: 10px;
+  outline: none;
+  color: #000;
+  transition: 0.3s;
+}
+.searchByDate button.active {
+  background-color: #19376d;
+  border: 1px solid #19376d;
+  color: #fff !important;
+}
+.searchByDate button:hover {
+  background-color: #19376d;
+  border: 1px solid #19376d;
+  color: #fff !important;
+}
+.searchByDate div {
+  width: 45%;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.searchByDate input {
+  border: 1px solid #d4d7dc;
+  width: 80%;
+  padding: 10px;
+  outline: none;
+}
+
+.so5 {
+  margin-top: 20px;
+  width: 98;
+  margin-left: 1%;
+}
+
+.so5 table {
+  width: 100%;
+}
+.so5 table th,
+td {
+  font-size: 13px;
+  font-weight: 600;
+}
+.so6 {
+  margin-top: 40px;
+  margin-left: 65%;
+  width: 30%;
+}
+
+.so7 {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+.so7 p {
+  margin: 0;
+}
+
+.downloadBtn {
+  background: #0cba73;
+  height: 40px;
+  color: #fff;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.Info_Box p {
+  margin: 0;
+}
+.Info_Box .title {
+  margin-bottom: 5px;
+  font-size: 20px;
+  font-weight: 700;
+}
+.Info_Box .desc {
+  border: 1px solid #ced4da;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.Desc-Container p.title {
+  margin-bottom: 0.5rem;
+}
+.Desc-Container p.desc {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  border: 1px solid #ced4da;
+  border-radius: 0.375rem;
+  background-color: #e9ecef;
+  overflow-wrap: anywhere;
+}
+
+.Schedule_Enquiry_Modal {
+  background-color: rgb(10, 72, 173);
+  color: #fff;
+}
+.Schedule_Enquiry_Modal .close_btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Schedule_Enquiry_Modal .close_btn h4 {
+  margin: 0;
+  margin-bottom: 20px;
+}
+.Schedule_Enquiry_Modal .close_btn i {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.searchByDate select {
+  border: 1px solid #d4d7dc;
+  padding: 10px;
+  outline: none;
+}
+
+/*Chat  */
+.chat {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+.chat .sidebar {
+  flex: 0 0 30%;
+  max-width: 30%;
+  border: 1px solid #ddd;
+}
+.chat .menu-list .container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
+  border-top: 1px solid #ddd;
+  height: 62px;
+}
+.chat .menu-list .container:hover {
+  background-color: #f0f2f5;
+}
+.chat .menu-list .container.active {
+  background-color: #f0f2f5;
+}
+.chat .menu-list .container:first-child {
+  border: none;
+}
+.chat .menu-list .container img {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  vertical-align: middle;
+}
+.chat .menu-list .container p {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0;
+  padding-right: 15px;
+}
+
+.chat .content {
+  flex: 70%;
+  max-width: 70%;
+}
+.chat .chat-box {
+  border: 1px solid #ddd;
+  padding: 20px;
+}
+.chat .chat-box .ttt {
+  max-height: 500px;
+  overflow-y: scroll;
+  padding: 20px;
+}
+.chat .chat-box .img-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 10px;
+}
+.chat .chat-box .img-container img {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  vertical-align: middle;
+}
+.chat .chat-box .img-container span {
+  font-size: 12px;
+  font-weight: 500;
+  margin: 0;
+}
+.chat .chat-box .img-container span .date {
+  margin-left: 10px;
+}
+
+.chat .chat-box .text {
+  font-size: 14px;
+  margin: 0;
+  padding-top: 10px;
+  width: 100%;
+}
+
+.chat .chat-box .sended-image {
+  max-width: 200px;
+  object-fit: contain;
+  object-position: center;
+  cursor: pointer;
+}
+
+.chat .chat-box .right .sended-image-tag {
+  display: flex;
+  justify-content: flex-end;
+}
+.chat .chat-box .right .sended-image {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.chat .chat-box .right {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: right;
+}
+.chat .chat-box .right .img-container {
+  flex-direction: row-reverse;
+}
+
+.chat .chat-box .send_button {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.chat .chat-box .send_button button {
+  width: 150px;
+  background-color: #1a949f;
+  padding: 10px;
+  color: #fff;
+}
+.chat .chat-box .send_button input {
+  width: 100%;
+  outline: none;
+  border: 1px solid #000;
+  padding: 10px;
+  border-radius: 5px;
+}
+.send-msg-form {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 20px;
+}
+.send-msg-form .input-container {
+  flex: 1;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  background-color: #eee5b8;
+  padding: 10px 30px;
+  border-radius: 20px;
+}
+.send-msg-form .input-container input {
+  flex: 1;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #042b26;
+}
+.send-msg-form .input-container input::placeholder {
+  color: #042b26;
+}
+.send-msg-form .input-container img {
+  width: 20px;
+  object-fit: cover;
+  object-position: center;
+  cursor: pointer;
+}
+.send-msg-form .send-button {
+  width: 40px;
+  height: 40px;
+  background-color: #eee5b8;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  border: 1px solid #eee5b8;
+}
+.send-msg-form .send-button img {
+  width: 40px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ---------------------- */
+.tailwind .schedule-overview .overview-content .right-panel .control-panel {
+  background-color: #f3f4f6;
+}
+
+.tailwind-dark
+  .schedule-overview
+  .overview-content
+  .right-panel
+  .control-panel {
+  background-color: #374151;
+  color: #fff;
+}
+
+.material .schedule-overview .overview-content .right-panel .control-panel {
+  background-color: #fafafa;
+}
+
+.material-dark
+  .schedule-overview
+  .overview-content
+  .right-panel
+  .control-panel {
+  background-color: #2a2a2a;
+  color: #ffff;
+}
+
+.fabric .schedule-overview .overview-content .right-panel .control-panel {
+  background-color: #ffffff;
+}
+
+.fabric-dark .schedule-overview .overview-content .right-panel .control-panel {
+  background-color: #333232;
+  color: #fff;
+}
+
+.fluent .schedule-overview .overview-content .right-panel .control-panel {
+  background-color: #f3f2f1;
+}
+
+.fluent-dark .schedule-overview .overview-content .right-panel .control-panel {
+  background-color: #252423;
+  border-color: #c1c1c1;
+  color: #fff;
+}
+
+.bootstrap .schedule-overview .overview-content .right-panel .control-panel {
+  background-color: #f8f8f8;
+}
+
+.bootstrap-dark
+  .schedule-overview
+  .overview-content
+  .right-panel
+  .control-panel {
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+.bootstrap5 .schedule-overview .overview-content .right-panel .control-panel {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+.bootstrap5-dark
+  .schedule-overview
+  .overview-content
+  .right-panel
+  .control-panel {
+  background-color: #343a40;
+  color: #fff;
+}
+
+.highcontrast .schedule-overview .overview-content .right-panel .control-panel {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.material3 .schedule-overview .overview-content .right-panel .control-panel {
+  background-color: #f3f1f8;
+}
+
+.material3-dark
+  .schedule-overview
+  .overview-content
+  .right-panel
+  .control-panel {
+  background-color: #2a2731;
+}
+
+.schedule-overview .overview-toolbar.e-rtl + * {
+  flex-direction: row-reverse;
+}
+
+.schedule-overview .overview-toolbar.e-toolbar {
+  border-radius: 0;
+}
+
+.schedule-overview
+  .overview-toolbar.e-toolbar
+  .e-toolbar-item
+  .e-tbar-btn.e-tbtn-txt {
+  display: inline-grid;
+}
+
+.material .schedule-overview .overview-toolbar.e-toolbar {
+  border-style: solid;
+}
+
+.schedule-overview
+  .overview-toolbar.e-toolbar
+  .e-toolbar-item:not(.e-separator) {
+  padding: 3.5px;
+}
+
+.schedule-overview
+  .overview-toolbar.e-toolbar
+  .e-toolbar-item
+  .e-btn.e-tbar-btn
+  .e-icons.e-btn-icon,
+.schedule-overview
+  .overview-toolbar.e-toolbar
+  .e-toolbar-item
+  .e-btn.e-tbar-btn
+  .e-tbar-btn-text {
+  line-height: 23px !important;
+  min-height: 23px !important;
+  padding: 0px !important;
+}
+
+.schedule-overview .overview-toolbar.e-toolbar .e-toolbar-item.e-template {
+  margin: 0 5px;
+}
+
+.schedule-overview .overview-content {
+  display: flex;
+}
+
+.schedule-overview .overview-content .left-panel {
+  height: 700px;
+  width: 100%;
+}
+
+.schedule-overview .overview-content .right-panel {
+  display: block;
+  height: 700px;
+  transform: translateX(0%);
+  transition: transform 0.5s ease, width 500ms;
+  width: 500px;
+}
+
+.schedule-overview .overview-content .right-panel.hide {
+  display: none;
+  transform: translateX(100%);
+  transition: transform 0.5s ease, width 500ms;
+  width: 0;
+}
+
+.schedule-overview .overview-content .right-panel .control-panel {
+  background: #f8f9fa;
+  font-size: 14px;
+  height: 100%;
+  overflow: auto;
+  padding: 15px;
+  width: 100%;
+}
+
+.schedule-overview .overview-content .right-panel .control-panel .col-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.schedule-overview .overview-content .right-panel .control-panel label {
+  font-weight: 500;
+}
+
+.schedule-overview .overview-content .right-panel .control-panel .col-left {
+  flex: 0 0 41.666667%;
+  max-width: 41.666667%;
+  margin-bottom: 1rem;
+}
+
+.schedule-overview .overview-content .right-panel .control-panel .col-right {
+  flex: 0 0 58.333333%;
+  max-width: 58.333333%;
+  margin-bottom: 1rem;
+}
+
+.schedule-overview .overview-scheduler {
+  height: 100%;
+  width: 100%;
+}
+
+.schedule-overview .e-schedule-toolbar .e-views,
+.schedule-overview .e-schedule-toolbar .e-schedule-seperator,
+.schedule-workweek.e-multi-select-list-wrapper.e-checkbox .e-filter-parent,
+.schedule-resource.e-multi-select-list-wrapper.e-checkbox .e-filter-parent {
+  display: none;
+}
+
+.schedule-overview .e-timeline-view .e-resource-left-td,
+.schedule-overview .e-timeline-month-view .e-resource-left-td {
+  width: 120px;
+}
+
+.schedule-resource.e-multi-select-list-wrapper.e-checkbox
+  .e-list-parent:first-child
+  li:first-child {
+  background-image: none;
+  opacity: 0.5;
+  pointer-events: none;
+  user-select: none;
+}
+
+.schedule-overview .calendar-import.e-upload {
+  border: 0;
+  padding-left: 0 !important;
+}
+
+.schedule-overview .calendar-import.e-upload .e-btn-icon {
+  margin-left: initial;
+}
+
+.schedule-overview .calendar-import.e-upload .e-file-select-wrap {
+  padding: 0;
+}
+
+.schedule-overview .calendar-import.e-upload .e-file-select-wrap .e-file-drop,
+.calendar-import .e-upload-files {
+  display: none;
+}
+
+.e-bigger .schedule-context-menu ul .e-menu-item .e-menu-icon {
+  font-size: 14px;
+}
+
+.schedule-context-menu ul .e-menu-item .e-menu-icon {
+  font-size: 12px;
+}
+
+.schedule-overview.e-schedule .e-vertical-view .e-header-cells,
+.schedule-overview.e-schedule .e-timeline-month-view .e-header-cells {
+  padding: 0;
+  text-align: center !important;
+}
+
+.schedule-overview.e-schedule .date-text {
+  font-size: 14px;
+}
+
+.schedule-overview.e-schedule.e-device .date-text {
+  font-size: 12px;
+}
+
+.schedule-overview.e-schedule .weather-image {
+  width: 20px;
+  height: 20px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.schedule-overview.e-schedule .e-month-view .weather-image {
+  float: right;
+  margin: -20px 2px 0 0;
+  width: 20px;
+  height: 20px;
+}
+
+.fluent .e-appbar .e-btn-icon.e-icons,
+.fluent-dark .e-appbar .e-btn-icon.e-icons {
+  margin-top: -2px;
+}
+
+.fluent .e-toolbar-item .e-checkbox-wrapper .e-icons.e-frame,
+.fluent-dark .e-toolbar-item .e-checkbox-wrapper .e-icons.e-frame {
+  height: 17px;
+  line-height: 17px;
+  width: 17px;
+}
+
+.fluent .e-toolbar-item .e-checkbox-wrapper .e-icons.e-frame.e-check,
+.fluent-dark .e-toolbar-item .e-checkbox-wrapper .e-icons.e-frame.e-check {
+  font-size: 15px;
+  line-height: 16px;
+}
+
+.e-toolbar .e-toolbar-item .e-tbar-btn {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+#exportBtn {
+  white-space: nowrap;
+}
+
+.time {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  padding: 0 5px;
+}
+
+.template {
+  height: 46px;
+  line-height: 23px;
+}
+
+.template .icon-child {
+  text-align: center;
+  height: 23px !important;
+}
+
+.template .text-child {
+  font-size: 14px;
+  line-height: 23px !important;
+}
+
+@media (max-width: 481px) {
+  .schedule-overview .overview-content .right-panel {
+    position: absolute;
+    width: 90%;
+  }
+
+  .import-button,
+  #printBtn,
+  #exportBtn {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .schedule-overview .overview-content .right-panel .control-panel .col-row {
+    display: initial;
+  }
+
+  .schedule-overview .overview-content .right-panel .control-panel .col-left {
+    flex: initial;
+    max-width: initial;
+    margin-bottom: initial;
+  }
+
+  .schedule-overview .overview-content .right-panel .control-panel .col-right {
+    flex: initial;
+    max-width: initial;
+  }
+}
+
+/* --- */
+.e-event-popup {
+  background-color: rgb(10, 72, 173);
+  font-family: Quicksand !important;
+  font-weight: 600 !important;
+}
+.e-cell-popup {
+  font-family: Quicksand !important;
+  font-weight: 600 !important;
+  display: none !important;
+}
+.Add_Service_Modal input {
+  width: 100%;
+  border: 1px solid #000;
+  padding: 10px;
+  font-size: 12px;
+  color: #000;
+
+  margin-bottom: 10px;
+}
+.Add_Service_Modal select {
+  width: 100%;
+  border: 1px solid #000;
+  padding: 10px;
+  font-size: 12px;
+  color: #000;
+  margin-bottom: 10px;
+}
+.Add_Service_Modal select option {
+  font-weight: 600;
+}
+.Add_Service_Modal_button {
+  width: 200px;
+  border: 1px solid #000;
+  padding: 10px;
+  font-size: 12px;
+  color: #000;
+  margin-bottom: 10px;
+  display: block;
+  margin: auto;
+}
+
+.e-schedule .e-month-view .e-appointment .e-appointment-details,
+.e-schedule .e-schedule-toolbar .e-tbar-btn .e-tbar-btn-text,
+.e-schedule .e-month-view .e-date-header-wrap table td,
+.e-schedule .e-month-agenda-view .e-date-header-wrap table td,
+.e-schedule .e-month-view .e-work-cells,
+.e-schedule .e-month-agenda-view .e-work-cells,
+.e-bigger .e-more-popup-wrapper .e-appointment .e-subject,
+.e-more-popup-wrapper .e-appointment .e-subject,
+.e-bigger .e-more-popup-wrapper .e-more-event-date-header,
+.e-more-popup-wrapper .e-more-event-date-header,
+.quick-info-header-content,
+.quick-info-title,
+.duration-text,
+.e-schedule
+  .e-vertical-view
+  .e-day-wrapper
+  .e-appointment
+  .e-appointment-details,
+.e-schedule .e-vertical-view .e-time-cells-wrap table td,
+.e-schedule .e-vertical-view .e-date-header-wrap table tbody td.e-header-cells {
+  font-family: Quicksand !important;
+  font-weight: 600 !important;
+}
+
+.Add_Service_Modal {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.e-dlg-container.e-schedule-dialog.e-dlg-center-center.e-schedule-dialog-container {
+  display: none !important;
+}
+
+/* -------------- */
+.Appointment_Canvas .selector {
+  width: 100%;
+  overflow: hidden;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 20px;
+}
+.Appointment_Canvas {
+  padding-top: 20px;
+}
+.Appointment_Canvas .selector div p {
+  text-transform: capitalize;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  width: 90px;
+  display: block;
+  margin: auto;
+  padding: 10px;
+  font-size: 14px;
+}
+.Appointment_Canvas .selector div p.active {
+  background-color: #000;
+  color: #fff !important;
+  border-radius: 100px;
+}
+
+.Appointment_Canvas .user_select {
+  width: 300px;
+  border-bottom: 1px solid #ddd;
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+  /* margin: auto; */
+}
+.Appointment_Canvas .user_select .img {
+  width: 40px;
+  height: 40px;
+  color: #dad7ff;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 100%;
+  font-size: 20px;
+  background-color: #573d9c;
+  font-weight: 600;
+  text-transform: uppercase;
+  position: relative;
+}
+.Appointment_Canvas .user_select .img .fa-credit-card {
+  position: absolute;
+  color: #000;
+  bottom: -10px;
+  height: 25px;
+  width: 25px;
+  right: -5px;
+}
+.Appointment_Canvas .user_select .content p {
+  margin: 0;
+}
+.Appointment_Canvas .user_select .content p.heading {
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  text-transform: capitalize;
+}
+.Appointment_Canvas .user_select .content p.faded {
+  font-size: 12px;
+  color: #726f75;
+  word-wrap: break-word;
+}
+.Appointment_Canvas .user_select_container {
+  max-width: 1400px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  gap: 40px;
+}
+.Appointment_Canvas .search_input {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  border: 1px solid #d4d7dc;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.Appointment_Canvas .search_input input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: black;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.Appointment_Canvas .heading p {
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.Appointment_Canvas .service_selector {
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+  justify-content: space-between;
+  border-left: 4px solid #c43081;
+}
+@media (max-width: 768px) {
+  .Appointment_Canvas .service_selector {
+    width: 100%;
+    height: auto;
+  }
+}
+.Appointment_Canvas .service_selector p {
+  margin: 0;
+}
+.Appointment_Canvas .service_selector p.title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  text-transform: capitalize;
+}
+.Appointment_Canvas .service_selector p.faded {
+  font-size: 14px;
+  color: #726f75;
+}
+.Appointment_Canvas .service_selector p.price {
+  font-size: 20px;
+  font-weight: 600;
+  color: #000;
+  text-transform: capitalize;
+}
+.service_selector_container {
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  gap: 20px;
+  align-items: flex-start;
+}
+.service_selector_container button {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid rgb(0, 0, 0);
+  width: 200px;
+  display: block;
+  font-size: 12px;
+}
+
+.Appointment_Canvas .info_tab {
+  padding: 20px;
+}
+
+.Appointment_Canvas .info_tab p.title {
+  font-size: 25px;
+  font-weight: 600;
+}
+.Appointment_Canvas .info_tab textarea {
+  max-width: 100%;
+  width: 100%;
+  border: 1px solid #d4d7dc;
+  outline: none;
+  padding: 20px;
+  border-radius: 10px;
+  height: 100px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.Appointment_Canvas .info_tab button.submit-btn {
+  margin-bottom: 10px;
+  width: 120px;
+  background-color: #000;
+  border-radius: 10px;
+  padding: 10px;
+  color: #fff;
+  font-size: 12px;
+}
+.Appointment_Canvas .info_tab .note {
+  font-size: 14px;
+  color: #726f75;
+}
+
+.Appointment_Canvas .payment_class {
+  padding: 20px;
+}
+.Appointment_Canvas .payment_class .toggle_button_cont {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.Appointment_Canvas .payment_class .toggle_button_cont p {
+  margin: 0;
+  font-weight: 600;
+  font-size: 18px;
+}
+.Appointment_Canvas .payment_class .toggle_button_cont .form-check-input {
+  width: 40px !important;
+  height: 20px !important;
+}
+.Appointment_Canvas
+  .payment_class
+  .toggle_button_cont
+  .form-check-input:checked {
+  background-color: #6950f5 !important;
+  border-color: #6950f5 !important;
+}
+
+.Appointment_Canvas .payment_class .faded {
+  font-size: 16px;
+  margin-top: 20px;
+  color: #726f75;
+}
+
+.Appointment_Canvas .payment_class .toggle_button_cont .form-check-input:focus {
+  border-color: #6950f5 !important;
+  box-shadow: none;
+}
+
+.Appointment_Canvas .last_button {
+  border-top: 1px solid #d4d7dc;
+  padding: 20px;
+}
+
+.Appointment_Canvas .last_button .price-cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 5px;
+}
+
+.Appointment_Canvas .last_button .price-cont.border-line {
+  border-top: 1px solid #d4d7dc;
+}
+.Appointment_Canvas .last_button .price-cont p {
+  margin: 0;
+}
+.Appointment_Canvas .last_button .price-cont .total {
+  font-size: 16px;
+  font-weight: 600;
+}
+.Appointment_Canvas .last_button .price-cont .faded {
+  font-size: 14px;
+  font-weight: 500;
+  color: #726f75;
+}
+
+.Appointment_Canvas .last_button .text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.Appointment_Canvas .last_button .text p {
+  font-weight: 600;
+  font-size: 16px;
+}
+.Appointment_Canvas .last_button .btn_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.Appointment_Canvas .last_button .btn_container .checkout {
+  width: 50%;
+  border: 1px solid #d4d7dc;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .Appointment_Canvas .last_button .btn_container button {
+    font-size: 12px !important;
+  }
+}
+.Appointment_Canvas .last_button .btn_container .save {
+  width: 50%;
+  border: 1px solid #000;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #000;
+  color: #fff;
+}
+
+.Appointment_Canvas .select_container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* ---- */
+.customize_calender {
+  width: 100%;
+}
+.customize_calender table {
+  width: 100%;
+}
+.customize_calender table thead tr th {
+  background: #fff;
+  border-color: rgba(0, 0, 0, 0.12);
+  border-style: solid;
+  border-width: 0 0 1px 1px;
+  color: rgba(0, 0, 0, 0.87);
+  font-size: none;
+  text-align: left;
+  text-transform: none;
+  font-size: 13px;
+  padding: 4px;
+}
+
+.customize_calender table tbody tr td {
+  background: #fafafa;
+  border-color: rgba(0, 0, 0, 0.12);
+  border-style: solid;
+  border-width: 0 0 1px 1px;
+  color: rgba(0, 0, 0, 0.54);
+  padding: 0;
+  height: 100px;
+  vertical-align: top;
+  width: 137px;
+  cursor: pointer;
+}
+
+.customize_calender table tbody tr td .e-date-header {
+  cursor: pointer;
+  display: table;
+  height: 20px;
+  line-height: 20px;
+  margin: 3px 3px 2px;
+  text-align: center;
+}
+.customize_calender table tbody tr td:hover,
+.customize_calender table tbody tr td .e-date-header:hover {
+  background: #f5f5f5;
+  color: #000 !important;
+}
+
+.customize_calender table tbody tr td .bookings {
+  display: flex;
+  line-height: 20px;
+  background: #3f51b5;
+  border: 1px solid #e8eaf6;
+  border-radius: 2px;
+  color: #fff;
+  cursor: pointer;
+  width: 100%;
+  align-items: center;
+}
+
+.customize_calender table tbody tr td .bookings .time {
+  font-size: 11px;
+  padding: 1.5px;
+}
+.customize_calender table tbody tr td .bookings .subject {
+  flex: auto;
+  font-size: 13px;
+  font-weight: 500;
+  overflow: hidden;
+  padding: 1px 2px;
+  text-overflow: ellipsis;
+}
+
+.scheduler-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+
+.scheduler-container label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.scheduler-container input {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.scheduler-container button {
+  background-color: #4caf50;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.scheduler-container button:hover {
+  background-color: #45a049;
+}
+
+.scheduler-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.scheduler-container li {
+  margin-bottom: 8px;
+}
+
+/* ----- */
+.customize_calender .month-navigation {
+  border: 0;
+  border-bottom: 0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  margin-bottom: 3px;
+  min-height: 42px;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.customize_calender .month-navigation .month_calender {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.customize_calender .month-navigation .month_calender p {
+  margin: 0;
+  font-weight: 600;
+}
+.customize_calender .month-navigation .month_calender button i {
+  font-size: 12px;
+}
+.customize_calender .month-navigation .another_function ul {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.customize_calender .month-navigation .another_function ul li {
+  font-weight: 600;
+  font-size: 14px;
+  margin: 0;
+  cursor: pointer;
+}
+
+/* ----- */
+.react_calender_base {
+  position: relative;
+}
+.react_calender_base .plus_icon {
+  background-color: #5943cc;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.react_calender_base .plus_icon i {
+  font-size: 14px;
+  color: #fff;
+}
+.react_calender_base .plus_icon img.icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  object-position: center;
+  color: #fff;
+}
+.react_calender_base .motion_Handler {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  padding: 20px;
+}
+
+.react_calender_base .plus_container {
+  display: flex;
+  justify-content: flex-end;
+}
+.react_calender_base .motion_Handler .open_handler div {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 20px;
+  z-index: 9999;
+  position: relative;
+}
+.react_calender_base .motion_Handler .open_handler div p {
+  margin: 0;
+  background-color: #514950;
+  color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.react_calender_base .motion_Handler .open_handler div .icon-container {
+  background-color: #514950;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+.react_calender_base .motion_Handler .open_handler div .icon-container .icon {
+  width: 20px;
+  height: 20px;
+}
+
+.react_calender_base .close {
+  background-color: #fff;
+}
+.react_calender_base .close i {
+  color: #000;
+}
+
+/* ------ */
+.booked_appointment_modal form div p {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  margin-bottom: 5px;
+}
+.booked_appointment_modal form div {
+  margin-top: 20px;
+}
+.booked_appointment_modal form div input {
+  width: 100%;
+  border: 1px solid #d4d7dc;
+  outline: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.booked_appointment_modal form div textarea {
+  width: 100%;
+  border: 1px solid #d4d7dc;
+  outline: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.booked_appointment_modal form div select {
+  width: 100%;
+  border: 1px solid #d4d7dc;
+  outline: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.booked_appointment_modal form button {
+  background-color: #000;
+  border: 1px solid #000;
+  color: #fff;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 100%;
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+}
+.booked_appointment_modal .btn_container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.booked_appointment_modal .btn_container button {
+  max-width: 100%;
+  margin: 0;
+}
+.booked_appointment_modal .btn_container i {
+  color: #bd5f74;
+  font-size: 16px;
+  font-weight: 400;
+}
+/* ----- */
+.appointment_detail_header {
+  background-color: #4784d5;
+  color: #fff;
+  padding: 20px;
+}
+
+.appointment_detail_header .upper {
+  display: flex;
+  justify-content: flex-end;
+}
+.appointment_detail_header .upper i {
+  font-size: 20px;
+  cursor: pointer;
+}
+.appointment_detail_header p {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.Booked_Detail {
+  padding: 10px;
+  max-width: 1400px;
+  margin: auto;
+  height: 100%;
+}
+
+.Booked_Detail .select_container .user_select_container .user_select {
+  border: 1px solid #d4d7dc;
+  border-radius: 10px;
+  width: 350px;
+}
+
+.Booked_Detail
+  .select_container
+  .user_select_container
+  .user_select
+  .content
+  .tags {
+  font-size: 12px;
+  background-color: #dad7ff;
+  color: #5943cc;
+  padding: 4px;
+  border-radius: 2px;
+}
+
+.Booked_Detail .date_container {
+  display: flex;
+  width: 350px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Booked_Detail .date_container p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+}
+.Booked_Detail .date_container button {
+  font-size: 14px;
+  border: 1px solid #514950;
+  width: 100px;
+  padding: 2px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+.Booked_Detail .booked_service {
+  margin-top: 20px;
+}
+.Booked_Detail .booked_service .service_selector {
+  width: 350px;
+}
+
+@media (max-width: 768px) {
+  .Booked_Detail .date_container {
+    width: 100%;
+  }
+  .Booked_Detail .booked_service .service_selector {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.user_detail_canvas {
+  background-color: #dedddc;
+}
+.white_backgroud {
+  background-color: #fff;
+  padding: 20px;
+  margin-top: 20px;
+}
+.user_detail_canvas .user_detail {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+}
+.user_detail_canvas .user_detail .img {
+  width: 40px;
+  height: 40px;
+  color: #dad7ff;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 100%;
+  font-size: 20px;
+  background-color: #573d9c;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.user_detail_canvas .user_detail .content p {
+  margin: 0;
+}
+.user_detail_canvas .user_detail .content p.heading {
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  text-transform: capitalize;
+}
+.user_detail_canvas .user_detail .content p.faded {
+  font-size: 12px;
+  color: #726f75;
+}
+
+.user_detail_canvas .tags {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+  padding-left: 20px;
+}
+.user_detail_canvas .tags span {
+  font-size: 12px;
+  background-color: #dad7ff;
+  color: #5943cc;
+  padding: 4px;
+  border-radius: 2px;
+}
+.user_detail_canvas .btns_upper {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 20px;
+}
+.user_detail_canvas .btns_upper i {
+  border: 1px solid #d4d7dc;
+  padding: 10px;
+  width: 40px;
+  text-align: center;
+  border-radius: 5px;
+  height: 40px;
+  line-height: 20px;
+  cursor: pointer;
+}
+.user_detail_canvas .btns_upper button {
+  background-color: #000;
+  color: #fff;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 10px;
+}
+
+.text_Modal .modal-content {
+  background-color: transparent !important;
+  border: none !important;
+}
+.text_Modal .phone_dialoag {
+  background-color: #fff;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+.text_Modal .phone_dialoag p {
+  margin: 0;
+  text-align: center;
+  border-bottom: 1px solid #d4d7dc;
+  padding: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.text_Modal .phone_dialoag button {
+  margin: 0;
+  text-align: center;
+  border-bottom: 1px solid #d4d7dc;
+  padding: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+}
+.text_Modal .phone_dialoag p:last-child {
+  border-bottom: none;
+}
+.text_Modal .phone_dialoag button:last-child {
+  border-bottom: none;
+}
+.text_Modal .close_btn {
+  background-color: #fff;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  padding: 10px;
+}
+.text_Modal .close_btn p {
+  margin: 0;
+  text-align: center;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.activity_dialog {
+  padding: 20px;
+}
+
+.activity_dialog .heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.activity_dialog .heading h5 {
+  font-size: 25px;
+  font-weight: 700;
+}
+.activity_dialog .heading select {
+  width: 200px;
+  border: 1px solid #d4d7dc;
+  padding: 10px;
+  border-radius: 50px;
+  color: #684ce7;
+  font-weight: 600;
+  outline: none;
+}
+.activity_dialog .heading select option {
+  color: #684ce7;
+  font-weight: 600;
+}
+
+.activity_dialog .faded_span {
+  color: #726f75;
+  text-transform: capitalize;
+}
+
+.user_detail_canvas .appointment_details .dates_stuff {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.user_detail_canvas .appointment_details .dates_stuff .date {
+  border: 1px solid #d4d7dc;
+  padding: 10px;
+  width: 60px;
+  text-align: center;
+}
+.user_detail_canvas .appointment_details .dates_stuff .date p {
+  margin: 0;
+}
+.user_detail_canvas .appointment_details .dates_stuff .date p.day {
+  font-weight: 700;
+  font-size: 14px;
+}
+.user_detail_canvas .appointment_details .dates_stuff .date p.mth {
+  font-weight: 700;
+  font-size: 12px;
+  color: #726f75;
+}
+.user_detail_canvas .appointment_details .dates_stuff .content_stuff p {
+  margin: 0;
+}
+.user_detail_canvas .appointment_details .dates_stuff .content_stuff .head {
+  font-weight: 16px;
+  font-weight: 600;
+}
+.user_detail_canvas .appointment_details .dates_stuff .content_stuff .faded {
+  font-weight: 12px;
+  font-weight: 400;
+  color: #726f75;
+}
+.user_detail_canvas .appointment_details .dates_stuff .content_stuff span {
+  font-size: 12px;
+  background-color: #dad7ff;
+  color: #5943cc;
+  padding: 4px;
+  border-radius: 2px;
+  font-weight: 600;
+}
+
+.user_detail_canvas .appointment_details .service_details {
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+  justify-content: space-between;
+  border-left: 4px solid #c43081;
+  margin-top: 20px;
+}
+.user_detail_canvas .appointment_details .service_details p {
+  margin: 0;
+}
+.user_detail_canvas .appointment_details .service_details p.title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  text-transform: capitalize;
+}
+.user_detail_canvas .appointment_details .service_details p.faded {
+  font-size: 12px;
+  color: #726f75;
+}
+.user_detail_canvas .appointment_details .service_details p.price {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  text-transform: capitalize;
+}
+
+@media (max-width: 768px) {
+  .user_detail_canvas .appointment_details .service_details {
+    width: 100%;
+  }
+}
+
+.user_detail_canvas .appointment_details .notes {
+  margin-top: 20px;
+}
+.user_detail_canvas .appointment_details .notes p.heading {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+.user_detail_canvas .appointment_details .notes p.faded {
+  font-size: 14px;
+  color: #726f75;
+}
+
+.user_detail_canvas .appointment_details .notes button {
+  padding: 10px;
+  border: 1px solid #d4d7dc;
+  border-radius: 10px;
+  width: 200px;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.user_detail_canvas i.fa-arrow-left {
+  font-size: 20px;
+  cursor: pointer;
+}
+.Booked_Detail .select_container .add_another {
+  width: 350px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: space-between;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.Booked_Detail .select_container .add_another p {
+  margin: 0;
+  color: #5943cc;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.Booked_Detail .select_container .add_another i {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #5943cc;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 100%;
+  color: #5943cc;
+  font-size: 14px;
+  cursor: pointer;
+}
+.default-btn {
+  width: 100%;
+  border: 1px solid #e5e5e5;
+  background-color: #e5e5e5;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: not-allowed !important;
+  margin-bottom: 20px;
+}
+.resentBtn{
+  width: 100%;
+  border: 1px solid #e5e5e5;
+  background-color: #e5e5e5;
+  padding: 4px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.Booked_Detail .last_button .elipse_container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.Booked_Detail .last_button .elipse_container i {
+  border: 1px solid #d4d7dc;
+  padding: 10px;
+  width: 40px;
+  text-align: center;
+  border-radius: 5px;
+  height: 40px;
+  line-height: 20px;
+  cursor: pointer;
+}
+.Booked_Detail .last_button .elipse_container button {
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  border-radius: 10px;
+}
+.Booked_Detail .define_notes {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+.Booked_Detail .define_notes form {
+  width: 90%;
+}
+.Booked_Detail .define_notes textarea {
+  max-width: 100%;
+  width: 100%;
+  border: 1px solid #d4d7dc;
+  outline: none;
+  padding: 20px;
+  border-radius: 10px;
+  height: 100px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.Booked_Detail .define_notes button {
+  margin-bottom: 10px;
+  width: 120px;
+  background-color: #000;
+  border-radius: 10px;
+  padding: 10px;
+  color: #fff;
+  font-size: 16px;
+  margin-top: 10px;
+}
+.Booked_Detail .define_notes p {
+  font-size: 18px;
+  margin: 0;
+  color: #726f75;
+}
+
+.Booked_Detail .define_notes .dropdown-toggle::after {
+  display: none;
+}
+.Booked_Detail .define_notes .dropdown-toggle {
+  outline: none;
+}
+.Booked_Detail .define_notes .dropdown-toggle:focus {
+  border: none;
+  outline: none;
+}
+.Booked_Detail .define_notes .dropdown-item:active {
+  text-decoration: none;
+  background-color: #fff !important;
+}
+
+.awaited_payment img {
+  width: 100px;
+  display: block;
+  margin: auto;
+}
+.awaited_payment {
+  text-align: center;
+}
+.awaited_payment p.head {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+}
+.awaited_payment p.faded {
+  font-size: 14px;
+  margin: 0;
+  font-weight: 400;
+  color: #726f75;
+  margin-top: 20px;
+}
+.awaited_payment button {
+  width: 200px;
+  border: 1px solid #000;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .Booked_Detail .select_container .add_another {
+    width: 100%;
+  }
+}
+
+.date_selector {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 10px;
+  border: 1px solid #d4d7dc;
+  max-width: 700px;
+  margin: auto;
+  border-radius: 50px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.date_selector button.next {
+  border-right: 1px solid #d4d7dc;
+  padding: 10px;
+  color: #341c96;
+  font-weight: 700;
+  font-size: 12px;
+}
+.date_selector button.prev {
+  border-left: 1px solid #d4d7dc;
+  padding: 10px;
+  color: #341c96;
+  font-weight: 700;
+  font-size: 12px;
+}
+.date_selector input {
+  outline: none;
+  font-size: 12px;
+  font-weight: 700;
+}
+.date_selector span {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.Appointment_Canvas .notify_check_box {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.Appointment_Canvas .notify_check_box p,
+span {
+  margin: 0;
+}
+
+.Appointment_Canvas .notify_check_box input {
+  width: 20px;
+  height: 20px;
+  margin-top: 5px;
+}
+
+.Appointment_Canvas .notify_check_box p {
+  font-size: 18px;
+  font-weight: 700;
+}
+.Appointment_Canvas .notify_check_box span {
+  font-size: 12px;
+  font-weight: 500;
+  color: #726f75;
+}
+
+.recently_booked {
+  margin-top: 20px;
+  overflow: hidden;
+}
+.recently_booked .heading {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.recently_booked .service {
+  width: 300px !important;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+  justify-content: space-between;
+  margin: auto;
+}
+@media (max-width: 786px) {
+  .recently_booked .service {
+    width: 100% !important;
+  }
+}
+.recently_booked .service p {
+  margin: 0;
+}
+.recently_booked .service p.title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+  text-transform: capitalize;
+}
+.recently_booked .service p.faded {
+  font-size: 14px;
+  color: #726f75;
+}
+.recently_booked .service p.price {
+  font-size: 16px;
+  color: #726f75;
+  font-weight: 700;
+}
+
+.Alert_container div {
+  font-family: Quicksand !important;
+  font-weight: 700;
+  text-align: center;
+  background: #6950f2 !important;
+  color: #fff !important;
+}
+.react_calender_base .rbc-day-slot .rbc-time-slot {
+  /* border-top: none; */
+  border-top: 1px solid #bbb9b7;
+}
+
+.Appointment_Canvas .select_container .add_another {
+  width: 350px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: space-between;
+  margin-top: 20px;
+  /* margin: auto; */
+}
+
+.Appointment_Canvas .select_container .add_another p {
+  margin: 0;
+  color: #5943cc;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.Appointment_Canvas .select_container .add_another i {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #5943cc;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 100%;
+  color: #5943cc;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.Appointment_Canvas .select_container .add_another .icon-div {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #5943cc;
+  border-radius: 100%;
+  color: #5943cc;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calender_notification {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.calender_notification .container {
+  border: 1px solid #dcc7b7;
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  border-radius: 10px;
+
+  align-items: flex-start;
+}
+.calender_notification .container img {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+}
+.calender_notification .container .content h6 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+}
+.calender_notification .container .content p.faded {
+  margin: 0;
+  color: #c0ad9a;
+  font-size: 12px;
+}
+.calender_notification .container .content p {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+@media (max-width: 768px) {
+  .calender_notification .container img {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+  }
+  .calender_notification .container .content h6 {
+    font-size: 16px;
+  }
+  .calender_notification .container .content p.faded {
+    font-size: 12px;
+  }
+  .calender_notification .container .content p {
+    font-size: 12px;
+  }
+}
+.calender_filter {
+  padding: 20px;
+  overflow: hidden;
+}
+
+.calender_filter button.normal {
+  font-size: 12px;
+  background-color: #fff;
+  width: 120px !important;
+  display: block !important;
+  margin: auto !important;
+  border-radius: 50px;
+  color: #6751d9;
+  font-weight: 700;
+  padding: 10px;
+  border: 1px solid #6751d9;
+}
+
+.calender_filter button.active {
+  background-color: #6751d9;
+  color: #fff !important;
+}
+
+.cancel_appointment .tagLine {
+  font-size: 14px;
+
+  margin: 0;
+  font-weight: 600;
+}
+
+.cancel_appointment .checkbox {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+.cancel_appointment .checkbox input {
+  width: 20px;
+  height: 20px;
+}
+.cancel_appointment .checkbox div {
+  margin: 0;
+}
+.cancel_appointment .checkbox div p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+.cancel_appointment .checkbox div span {
+  margin: 0;
+  font-size: 12px;
+  color: #726f75;
+  font-weight: 600;
+}
+.calender_slot .title {
+  font-weight: 700;
+  margin: 0;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.calender_slot .title-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.calender_slot .no-show {
+  font-size: 15px;
+}
+.calender_slot .services-div ul {
+  padding: 0;
+}
+.calender_slot .services-div ul li {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.excel_upload {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+.excel_upload button {
+  background-color: #042b26;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  border: 1px solid #042b26;
+  border-radius: 10px;
+  width: 150px;
+  padding: 10px;
+}
+
+.Table_image {
+  border: 1px solid #d4d7dc;
+  padding: 2px;
+  width: 80px;
+}
+
+.Appointment_Canvas .walk-in {
+  max-width: 1400px;
+  margin: auto;
+}
+.Appointment_Canvas .walk-in .user_select {
+  width: 300px;
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+  align-items: center;
+  border: none;
+}
+.Appointment_Canvas .walk-in .user_select .img {
+  width: 40px;
+  height: 40px;
+  color: #573d9c;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 100%;
+  font-size: 16px;
+  background-color: #e7e7ff;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.Appointment_Canvas .walk-in .user_select .plus-icon-div {
+  width: 40px;
+  height: 40px;
+  color: #573d9c;
+  border-radius: 100%;
+  font-size: 16px;
+  background-color: #e7e7ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Appointment_Canvas walk-in .user_select .content p.heading {
+  font-size: 16px;
+  font-weight: 900;
+  color: #000;
+  text-transform: capitalize;
+}
+
+.rbc-calendar .rbc-toolbar .rbc-btn-group button.today-button {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .date_selector {
+    display: block;
+    /* padding-bottom: 20px; */
+    border: none;
+  }
+  .date_selector .btn_cont {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .date_selector div button {
+    width: 30%;
+    border: 1px solid #d4d7dc;
+    border-radius: 10px;
+  }
+  .date_selector .inputs {
+    display: flex;
+    justify-content: center;
+    pad: 10px;
+    margin-top: 20px;
+  }
+}
+
+.pdfs .box {
+  display: flex;
+  gap: 20px;
+  border-bottom: 1px solid #d4d7dc;
+  align-items: center;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+.pdfs .box p {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+}
+.pdfs .box a {
+  text-decoration: none;
+  border: 1px solid black;
+  color: #000;
+  padding: 10px;
+  width: 130px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.user_dialog button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.edit-profile-canvas textarea {
+  width: 100%;
+  border: 1px solid #d4d7dc;
+  outline: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.edit-profile-canvas .check-Box .form-check-input {
+  width: 40px !important;
+  height: 20px !important;
+  margin-top: 0;
+}
+.edit-profile-canvas .check-Box .form-check-input:checked {
+  background-color: #6950f5 !important;
+  border-color: #6950f5 !important;
+}
+.edit-profile-canvas .check-Box {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #d4d7dc;
+}
+.edit-profile-canvas .check-Box div {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin: 0;
+}
+.edit-profile-canvas .check-Box div p {
+  font-size: 16px;
+  margin: 0;
+  font-weight: 600;
+}
+.edit-profile-canvas .check-Box div.main {
+  margin-top: 10px;
+}
+
+.alreadyChecked {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+.alreadyChecked .form-check-input:checked {
+  background-color: #6950f5 !important;
+  border-color: #6950f5 !important;
+}
+
+.permission_table {
+  width: 100%;
+  table-layout: fixed;
+  border: 1px solid #d4d7dc;
+}
+.permission_table thead tr th {
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  border-bottom: 1px solid #d4d7dc;
+}
+.permission_table tbody tr td {
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  /* background-color: #e9ecef; */
+  border-bottom: 1px solid #d4d7dc;
+}
+
+@media (max-width: 768px) {
+  .full_input,
+  .full_withd {
+    width: 100% !important;
+  }
+}
+
+.quill-container .quill {
+  border: 1px solid #d4d7dc;
+  border-radius: 10px;
+}
+
+.quill-container .ql-container.ql-snow {
+  /* border: none; */
+}
+
+.quill-container span,
+.quill-container p,
+.quill-container ul li,
+.quill-container,
+.ql-editor p {
+  font-size: 15px;
+  font-family: Quicksand !important;
+}
+
+.Desc-Container .dag {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  border: 1px solid #ced4da;
+  border-radius: 0.375rem;
+  background-color: #e9ecef;
+  overflow-wrap: anywhere;
+}
+
+.toggle_button_cont input {
+  cursor: pointer;
+}
+
+ul,
+ol {
+  list-style: disc;
+}
+
+.select_Div div {
+  margin: 0 !important;
+}
+
+.full-react {
+  width: 100%;
+}
+
+.keyword-container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.keyword-container li {
+  list-style: none;
+  border: 1px solid black;
+  padding: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #000;
+}
+.card_saved {
+  padding: 20px;
+}
+.card_saved .img_container {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+.card_saved .img_container img {
+  width: 60px;
+}
+.card_saved .img_container div p.title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.card_saved .img_container div p.faded {
+  font-size: 14px;
+  color: #333232;
+}
+
+.card_saved .main {
+  margin-top: 20px;
+}
+
+.card_saved .main p.title {
+  font-size: 18px;
+  font-weight: 800;
+  margin: 0;
+}
+.card_saved .main p.desc {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .date_selector span {
+    display: none;
+  }
+}
+
+.main_hoc {
+  background-color: rgb(242, 243, 248);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: all;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  width: 100%;
+  height: 100vh;
+  z-index: 50;
+}
+
+@media (max-width: 768px) {
+  .main_hoc {
+    padding: 0 !important;
+  }
+  .react_calender_base {
+    padding: 5px !important;
+  }
+}
+
+.calender_slot.InMobile .main_container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.calender_slot.InMobile .main_container .title {
+  margin: 0;
+  font-size: 13px;
+}
+.calender_slot.InMobile .main_container span i {
+  margin: 0;
+  font-size: 10px;
+}
+.calender_slot.InMobile .services_list {
+  padding: 0;
+}
+.calender_slot.InMobile .services_list li {
+  padding: 0;
+  display: flex;
+  margin-top: 5px;
+}
+.calender_slot.InMobile .services_list li .time {
+  font-size: 10px;
+}
+.calender_slot.InMobile .services_list li .name {
+  font-size: 10px;
+}
+.no_show_in_mobile div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.no_show_in_mobile div p {
+  font-size: 10px;
+  margin: 0 !important;
+}
+.no_show_in_mobile div i {
+  font-size: 10px;
+  margin: 0 !important;
+}
+.no_show_in_mobile span {
+  font-size: 10px;
+}
+
+.cancel_appointment .button-on-end {
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid #d4d7dc;
+}
+.cancel_appointment .button-on-end button {
+  width: 200px;
+  margin: 0;
+  margin-top: 20px;
+}
+
+.Reschdeuled {
+  background-color: #000 !important;
+}
+
+.reschudele-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.reschudele-header p {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+
+.reschudele-header i {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .calender_slot .title {
+    font-size: 13px;
+    margin: 0 !important;
+  }
+  .calender_slot .no-show {
+    font-size: 10px;
+  }
+  .calender_slot .services-div ul li .service-time {
+    display: none;
+  }
+  .calender_slot .services-div ul li .service-name {
+    font-size: 13px;
+  }
+}
+.phone-number-read-only input {
+  border: none;
+  font-size: 12px;
+  padding: 0;
+  color: #726f75;
+  outline: none;
+  cursor: pointer;
+}
+.phone-number-read-only .special-label {
+  display: none;
+}
+.phone-number-read-only {
+  border: 1px solid black;
+  width: 100%;
+  padding: 10px;
+}
+
+/* --- */
+.delete_confirmation .close_btn {
+  display: flex;
+  justify-content: flex-end;
+}
+.delete_confirmation .close_btn i {
+  font-size: 20px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+.delete_confirmation .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-direction: column;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.delete_confirmation .content .fa-trash-can {
+  color: #df939f;
+  background-color: #ffe1e8;
+  width: 45px;
+  text-align: center;
+  height: 45px;
+  display: flex;
+  border-radius: 100%;
+  justify-content: center;
+  line-height: 45px;
+  transition: 0.5s;
+}
+.delete_confirmation .content h5 {
+  font-weight: 600;
+  margin: 0;
+  font-size: 22px;
+}
+
+.delete_confirmation .content p {
+  margin: 0;
+  color: #9da7c6;
+  font-size: 18px;
+  font-weight: 500;
+}
+.delete_confirmation .content p span {
+  color: #000;
+  font-weight: 600;
+}
+
+.delete_confirmation .btn_container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+}
+.delete_confirmation .btn_container button {
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 10px;
+  width: 150px;
+}
+.delete_confirmation .btn_container .cancel {
+  color: #5860ea;
+  background-color: #e1e2fc;
+}
+.delete_confirmation .btn_container .delete {
+  color: #db392c;
+  background-color: #ffe9e8;
+}
+
+.view_colored_btns {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.view_colored_btns button {
+  border: 1px solid #19376d;
+  padding: 10px;
+  outline: none;
+  color: #000;
+  font-size: 14px;
+  transition: 0.3s;
+}
+.view_colored_btns button:hover {
+  background-color: #19376d;
+  border: 1px solid #19376d;
+  color: #fff !important;
+}
+.view_colored_btns button.active {
+  background-color: #19376d;
+  border: 1px solid #19376d;
+  color: #fff !important;
+}
+
+.profile_image {
+  border-radius: 100%;
+  height: 150px;
+  object-fit: cover;
+  object-position: center;
+  width: 150px;
+  border: 1px solid #ddd;
+}
+
+.user-appointments {
+  grid-gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+}
+.user-appointments .Items {
+  align-items: flex-start;
+  display: flex;
+  gap: 20px;
+  margin-top: 40px;
+}
+.user-appointments .Items img {
+  height: 220px;
+  object-fit: contain;
+  object-position: top;
+  width: 220px;
+}
+.user-appointments .Items .content .Spec {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.user-appointments .Items .content .title {
+  color: #042b26;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+}
+.user-appointments .Items .content .orderId {
+  color: #042b26;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+}
+.user-appointments .Items .content .button-container {
+  align-items: center;
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+.user-appointments .Items .content .button-container button {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  padding: 10px;
+  text-align: center;
+  width: 200px;
+  background: rgb(4, 43, 38);
+  border: 1px solid rgb(4, 43, 38);
+  color: rgb(229, 216, 150);
+}
+
+.appointment_confirmed p {
+  margin: 0;
+}
+.appointment_confirmed p.title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+}
+.appointment_confirmed p.cmt {
+  font-size: 14px;
+  color: #726f75;
+}
+
+.close_btn_colored {
+  width: 100%;
+  background-color: #e1e1e1;
+  border: 1px solid #c7c7c7;
+  color: #000;
+  font-weight: 600;
+  font-size: 16px;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+.template-div {
+  padding: 20px;
+  border: 1px solid #ced4da;
+  border-radius: 10px;
+}
+.fullscreen-spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.45);
+  z-index: 1000;
+}
+
+.fullscreen-spinner .spinner {
+  border: 2px solid #fff;
+  border-radius: 50%;
+  border-top: 2px solid rgba(0, 0, 0, 0.45);
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.booked_appointment_modal form .btn-div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.booked_appointment_modal form .btn-div .fa-trash-can {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ddd;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 5px;
+  color: #df5f75;
+  cursor: pointer;
+}
+.booked_appointment_modal form .btn-div .icon-div {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.booked_appointment_modal form .btn-div .trash-icon {
+  color: #df5f75;
+  width: 20px;
+  height: 20px;
+}
+.booked_appointment_modal form .btn-div button {
+  flex: 1;
+  max-width: 100%;
+  margin-top: 0;
+  border-radius: 5px;
+}
+
+/* Checkout Canvas */
+.tip-canvas .tip-amount {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tip-canvas .tip-amount p {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+.tip-canvas .tip-amount i.fa-xmark {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.tip-canvas .tag-line {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.tip-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  gap: 40px;
+}
+.tip-container .main {
+  border: 1px solid #d4d7dc;
+  width: 200px;
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  flex-direction: column;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.tip-container .main.active {
+  border: 2px solid #807abb;
+}
+.tip-container .main p {
+  margin: 0;
+}
+.tip-container .main p.title {
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.tip-container .main p.faded {
+  font-size: 14px;
+  font-weight: 600;
+  color: #726f75;
+}
+.tip-container .main img {
+  width: 40px;
+}
+.tip-container .main .fa-plus {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #000;
+  text-align: center;
+  border-radius: 100%;
+  font-size: 16px;
+}
+.tip-container .main .plus-icon {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #000;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+.tip-container .main .plus-icon svg {
+  width: 14px;
+  margin: 0;
+}
+
+@media (max-width: 780px) {
+  .tip-container {
+    gap: 10px;
+  }
+  .tip-container .main {
+    width: 160px;
+    height: 120px;
+  }
+  .select-product-container .Item {
+    width: 100% !important;
+  }
+}
+
+.MW-Layout {
+  max-width: 1400px;
+  margin: auto;
+}
+
+.select-product-container {
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  gap: 20px;
+  align-items: flex-start;
+}
+.select-product-container .Item {
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.select-product-container .Item img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  object-position: center;
+}
+.select-product-container .Item .content {
+  flex: 1;
+}
+.select-product-container .Item .content p {
+  margin: 0;
+}
+.select-product-container .Item .content p.title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #000;
+}
+.select-product-container .Item .content p.price {
+  font-size: 14px;
+  color: #726f75;
+}
+.select-product-container .Item .content button {
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  padding: 5px;
+  margin-top: 5px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.MainPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  gap: 10px;
+}
+.MainPage p {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 600;
+}
+.MainPage button {
+  font-size: 14px;
+  background-color: rgb(4, 43, 38);
+  width: 200px;
+  color: #fff;
+  border: 1px solid rgb(4, 43, 38);
+  padding: 10px;
+  border-radius: 5px;
+}
+.NormalHeading {
+  font-size: 22px !important;
+}
+
+/* redeem-user-gift-card */
+.redeem-user-gift-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  height: 100%;
+  min-height: 95vh;
+}
+.redeem-user-gift-card .above .heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 3rem;
+}
+
+.redeem-user-gift-card .above .heading p {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.redeem-user-gift-card .above .heading i {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.redeem-user-gift-card .above .search p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.redeem-user-gift-card .above .search .main {
+  display: flex;
+  gap: 20px;
+  border: 1px solid #e2e2e2;
+  padding: 10px;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.redeem-user-gift-card .above .search .main i {
+  margin: 0;
+  font-size: 16px;
+}
+.redeem-user-gift-card .above .search .main input {
+  flex: 1;
+  outline: none;
+  margin: 0;
+  font-size: 14px;
+  color: #000;
+}
+
+.redeem-user-gift-card .above .coupons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.redeem-user-gift-card .above .coupons .item {
+  width: 100%;
+  border: 1px solid #e2e2e2;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.redeem-user-gift-card .above .coupons .item.active {
+  border: 1px solid #c43081;
+}
+.redeem-user-gift-card .above .coupons .item p {
+  margin: 0;
+}
+.redeem-user-gift-card .above .coupons .item p.title {
+  font-size: 16px;
+  font-weight: 600;
+}
+.redeem-user-gift-card .above .coupons .item p.title span {
+  font-size: 20px;
+}
+.redeem-user-gift-card .above .coupons .item p.description {
+  font-size: 14px;
+  font-weight: 400;
+}
+.redeem-user-gift-card .below .btn-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.redeem-user-gift-card .below .btn-container button {
+  width: 50%;
+  border: 1px solid #e2e2e2;
+  font-size: 16px;
+  color: #000;
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 5px;
+}
+.redeem-user-gift-card .below .btn-container button.filled {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #000;
+}
+
+.calculator {
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.calculator .screen {
+  max-width: 200px;
+  border-bottom: 1px solid #000;
+  font-size: 30px;
+  font-weight: 600;
+}
+.calculator .main {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5rem;
+}
+.calculator .main button {
+  border: 1px solid #e2e2e2;
+  width: 30%;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 5px;
+  background-color: #fff;
+  outline: none;
+}
+.calculator .main button:hover,
+.calculator .main button:focus {
+  background-color: #e2e2e2;
+}
+
+.redeem-user-gift-card .below .calculator-btn {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.redeem-user-gift-card .below .calculator-btn button {
+  background-color: #151515;
+  color: #fff;
+  border: 1px solid #151515;
+  font-size: 16px;
+  width: 150px;
+  padding: 10px;
+  border-radius: 5px;
+}
+.redeem-user-gift-card .below .calculator-btn p {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.cash-by {
+  max-width: 600px;
+  font-size: 14px;
+  margin: auto;
+}
+.cash-by select {
+  color: #5943cc;
+  border: none;
+  outline: none;
+}
+
+.redeem-user-gift-card .below .price-cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 5px;
+}
+
+.redeem-user-gift-card .below .price-cont.border-line {
+  border-top: 1px solid #d4d7dc;
+}
+.redeem-user-gift-card .below .price-cont p {
+  margin: 0;
+}
+.redeem-user-gift-card .below .price-cont .total {
+  font-size: 16px;
+  font-weight: 600;
+}
+.redeem-user-gift-card .below .price-cont .faded {
+  font-size: 14px;
+  font-weight: 500;
+  color: #726f75;
+}
+
+.required-field::after {
+  content: " *";
+  color: #c7253e;
+}
+.react-tel-input .special-label::after {
+  content: " *";
+  color: #c7253e;
+}
+
+.select-product-container .update-quantity {
+  border: 1px solid #ddd;
+  max-width: 100px;
+  width: 100%;
+  padding: 5px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+.select-product-container .update-quantity i {
+  font-size: 12px;
+  width: 40px;
+  height: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+.select-product-container .update-quantity .icon-container {
+  width: 40px;
+  height: 100%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.select-product-container .update-quantity span.quantity {
+  font-size: 14px;
+  flex: 1;
+  text-align: center;
+}
+.select-product-container .product-quantity-count {
+  background-color: #042b26;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border: 1px solid #042b26;
+  border-radius: 100%;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cutsom-progrss-bar {
+  width: 100px;
+  height: 10px;
+  border-radius: 20px;
+  background-color: #f1f1f1;
+}
+.cutsom-progrss-bar span {
+  background-color: rgb(4, 43, 38);
+  width: 50%;
+  display: block;
+  height: 100%;
+  border-radius: 20px;
+}
+
+.ban-svg {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  color: #fff;
+}
+
+.icon-action {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  margin: 0;
+}
+.icon-action svg {
+  width: 20px;
+  height: 20px;
+}
+
+.remove-icon {
+  color: #df939f;
+  background-color: #ffe1e8;
+  width: 35px;
+  text-align: center;
+  height: 35px;
+  display: flex;
+  border-radius: 100%;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.remove-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.remove-icon:hover {
+  transform: scale(1.2);
+}
+
+.send-review-email{
+  width: 200px;
+  background-color: #000;
+  padding: 10px;
+  color: #fff;
+  border: 1px solid #000;
+  font-size: 14px;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+.rating-stars{
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  
+}
+
+.delete_confirmation.user_list_modal .content{
+  justify-content: flex-start;
+  align-items: flex-start;
+
+}
+.delete_confirmation.user_list_modal .content ul  li{
+  font-size: 14px;
+  font-weight: 600;
+
+}
+.delete_confirmation.user_list_modal .content ul {
+  max-height: 400px;
+  overflow-y: auto;
+}
