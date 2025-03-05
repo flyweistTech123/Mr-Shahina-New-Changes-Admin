@@ -4273,13 +4273,13 @@ export const TemplatePreviewModalXl = ({ show, handleClose, title, body }) => {
         {title && (
           <h6
             dangerouslySetInnerHTML={{ __html: title.replace(/\n/g, "<br />") }}
-            className="mt-5"
+            // className="mt-5"
           ></h6>
         )}
         {body && (
           <p
             dangerouslySetInnerHTML={{ __html: body.replace(/\n/g, "<br />") }}
-            className="mt-5"
+            // className="mt-5"
           ></p>
         )}
       </Modal.Body>
@@ -4300,13 +4300,13 @@ export const TemplatePreviewModalSM = ({ show, handleClose, title, body }) => {
         {title && (
           <h6
             dangerouslySetInnerHTML={{ __html: title.replace(/\n/g, "<br />") }}
-            className="mt-5"
+            // className=""
           ></h6>
         )}
         {body && (
           <p
             dangerouslySetInnerHTML={{ __html: body.replace(/\n/g, "<br />") }}
-            className="mt-5"
+            // className="mt-5"
           ></p>
         )}
       </Modal.Body>

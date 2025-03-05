@@ -32,7 +32,16 @@ const ViewNotification = () => {
 
   return (
     <section className="sectionCont">
-      {ValueChecker(response?.data?.title, "Title")}
+      {/* {ValueChecker(response?.data?.title, "Title")} */}
+      {response?.data?.title && (
+        <div className="Desc-Container">
+          <p className="title"> Title </p>
+
+          <div className="dag">
+            <ViewDescription description={response?.data?.title} />
+          </div>
+        </div>
+      )}
       {response?.data?.body && (
         <div className="Desc-Container mt-1">
           <p className="title"> Body </p>
