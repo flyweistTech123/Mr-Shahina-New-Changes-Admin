@@ -4272,7 +4272,7 @@ export const TemplatePreviewModalXl = ({ show, handleClose, title, body }) => {
         {/* <h6> {title} </h6> */}
         {title && (
           <h6
-            dangerouslySetInnerHTML={{ __html: body.replace(/\n/g, "<br />") }}
+            dangerouslySetInnerHTML={{ __html: title.replace(/\n/g, "<br />") }}
             className="mt-5"
           ></h6>
         )}
@@ -4297,7 +4297,12 @@ export const TemplatePreviewModalSM = ({ show, handleClose, title, body }) => {
     >
       <Modal.Header closeButton>SMS Preview</Modal.Header>
       <Modal.Body>
-        <h6> {title} </h6>
+        {title && (
+          <h6
+            dangerouslySetInnerHTML={{ __html: title.replace(/\n/g, "<br />") }}
+            className="mt-5"
+          ></h6>
+        )}
         {body && (
           <p
             dangerouslySetInnerHTML={{ __html: body.replace(/\n/g, "<br />") }}
