@@ -136,7 +136,13 @@ const PdfViewer = ({ data }) => {
         ) {
           url =
             "https://shahinaimage.s3.us-west-1.amazonaws.com/PreandPostVisitInstructions.pdf";
-        }
+        }else if (i.filename === "exo-xom hair loss") {
+          url =
+            "https://shahinaimage.s3.us-west-1.amazonaws.com/shahina_1741332769015.pdf";
+        } else if (i.filename === "laser body slimming") {
+          url =
+            "https://shahinaimage.s3.us-west-1.amazonaws.com/shahina_1741332823478.pdf";
+        } 
 
         return (
           <div className="box" key={`pdf${index}`}>

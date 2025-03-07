@@ -170,7 +170,7 @@ const Another = () => {
                     <p className="title">
                       <span>{fullName}</span>
                     </p>
-                    {item?.cardDetailSaved === true ? (
+                    {item?.user?.cardDetailSaved === true ? (
                       <>
                         <FaCreditCard />
                         <FaThumbsUp />

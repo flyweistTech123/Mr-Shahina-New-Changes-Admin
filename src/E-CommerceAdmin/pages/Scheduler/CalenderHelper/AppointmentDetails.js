@@ -292,6 +292,8 @@ const AppointmentDetails = ({
         "Premium Rejuvenated Myer’s Special",
       "iv hydration now": "IV Hydration Now",
       "super immunity boost": "Super Immunity Boost",
+      "laser body slimming": "Pre and post care for Emerald Laser Body Slimming.pdf",
+      "exo-xom hair loss": "Exosomes pre and post care form.pdf",
     };
 
     if (detail?.data?.services) {
@@ -472,7 +474,7 @@ const AppointmentDetails = ({
                       <div className="img">
                         {" "}
                         {detail?.data?.user?.firstName?.slice(0, 1)}{" "}
-                        {detail?.data?.cardDetailSaved === true && (
+                        {detail?.data?.user?.cardDetailSaved === true && (
                           <BsFillCreditCard2FrontFill className="fa-credit-card" />
                         )}
                       </div>
