@@ -136,7 +136,7 @@ const AppointmentDetails = ({
         setLoading,
       });
     }
-  }, [detail?.data?.user?._id]); // Depend only on `user._id`, not the whole `detail`
+  }, [detail?.data?.user?._id]);
 
 
 
@@ -474,9 +474,21 @@ const AppointmentDetails = ({
                       <div className="img">
                         {" "}
                         {detail?.data?.user?.firstName?.slice(0, 1)}{" "}
-                        {detail?.data?.user?.cardDetailSaved === true && (
+                        {/* {detail?.data?.user?.cardDetailSaved === true && (
                           <BsFillCreditCard2FrontFill className="fa-credit-card" />
-                        )}
+                        )} */}
+                        {
+                          (detail?.data?.orderCreateThrough === "Admin" || detail?.data?.user?.orderCreateThrough === "Sub-Admin")
+                            ? (detail?.data?.cardDetailSaved && (
+                              <BsFillCreditCard2FrontFill className="fa-credit-card" />
+                            ))
+                            : ((detail?.data?.cardDetailSaved) ? (
+                              <BsFillCreditCard2FrontFill className="fa-credit-card" />
+
+                            ) :
+                              ""
+                            )
+                        }
                       </div>
                     )}
                     <div className="content">
@@ -915,7 +927,78 @@ const AppointmentDetails = ({
     //   );
     // };
     const SlidingComponent = () => {
-      if (detail?.data?.cardDetailSaved) {
+
+
+      if (detail?.data?.orderCreateThrough === 'Admin' || detail?.data?.orderCreateThrough === 'Sub-Admin') {
+        if (detail?.data?.cardDetailSaved) {
+          return (
+            <div className="card_saved">
+              <div className="img_container">
+                <img
+                  src="https://img.freepik.com/free-photo/blue-credit-card-front-back-isolated_125540-651.jpg?w=1380&t=st=1706947333~exp=1706947933~hmac=49d00cd694ee8debee849bbf346270274214894c2fa3070a9bc68d57343fb980"
+                  alt=""
+                />
+                <div>
+                  <p className="title">Confirmed with card</p>
+                  <p className="faded">{SavedCardDate(detail?.data?.cardDetailSavedDate)}</p>
+                </div>
+              </div>
+
+              <div className="main">
+                <p className="title">Cancellation policy</p>
+                <p className="desc">
+                  {isAvailable(
+                    detail?.data?.user?.firstName || detail?.data?.user?.lastName,
+                    detail?.data?.user?.firstName + " " + detail?.data?.user?.lastName
+                  )}{" "}
+                  agreed to your confirmation policy on {SavedCardDate(detail?.data?.cardDetailSavedDate)}.
+                </p>
+                <p className="desc mt-3">
+                  You may charge them <strong>50% fee</strong> for late cancellations within <strong>48 hours</strong> of the appointment time, or <strong>100% fee</strong> for not showing up.
+                </p>
+              </div>
+            </div>
+          );
+        }
+        else if (detail?.data?.sendConfirmationAppointmentWithCard) {
+          return (
+            <div className="awaited_payment">
+              <img src={img} alt="" />
+              <p className="head">Awaiting confirmation</p>
+              <p className="faded">
+                {isAvailable(
+                  detail?.data?.user?.firstName || detail?.data?.user?.lastName,
+                  detail?.data?.user?.firstName + " " + detail?.data?.user?.lastName
+                )}{" "}
+                received a notification to confirm this appointment with a card.
+              </p>
+              <button onClick={reminderHandler}>
+                {reminderLoading ? <ClipLoader /> : "Send reminder"}
+              </button>
+            </div>
+          );
+        }
+        else {
+          return (
+            <div className="awaited_payment">
+              <img src={img} alt="" />
+              <p className="head">Confirmation not requested</p>
+              <p className="faded">
+                {isAvailable(
+                  detail?.data?.user?.firstName || detail?.data?.user?.lastName,
+                  detail?.data?.user?.firstName + " " + detail?.data?.user?.lastName
+                )}{" "}
+                was not requested to confirm with card when the appointment was created.
+              </p>
+              <button onClick={reminderHandler}>
+                {reminderLoading ? <ClipLoader /> : "Ask client to confirm"}
+              </button>
+            </div>
+          );
+        }
+      }
+
+      else if (detail?.data?.cardDetailSaved) {
         return (
           <div className="card_saved">
             <div className="img_container">
@@ -977,7 +1060,7 @@ const AppointmentDetails = ({
         );
       }
 
-      else if (detail?.data?.sendConfirmationAppointmentWithCard === false) {
+      else {
         return (
           <div className="awaited_payment">
             <img src={img} alt="" />
@@ -991,25 +1074,6 @@ const AppointmentDetails = ({
             </p>
             <button onClick={reminderHandler}>
               {reminderLoading ? <ClipLoader /> : "Ask client to confirm"}
-            </button>
-          </div>
-        );
-      }
-
-      else {
-        return (
-          <div className="awaited_payment">
-            <img src={img} alt="" />
-            <p className="head">Awaiting confirmation</p>
-            <p className="faded">
-              {isAvailable(
-                detail?.data?.user?.firstName || detail?.data?.user?.lastName,
-                detail?.data?.user?.firstName + " " + detail?.data?.user?.lastName
-              )}{" "}
-              received a notification to confirm this appointment with a card.
-            </p>
-            <button onClick={reminderHandler}>
-              {reminderLoading ? <ClipLoader /> : "Send reminder"}
             </button>
           </div>
         );

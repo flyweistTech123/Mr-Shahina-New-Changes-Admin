@@ -117,170 +117,186 @@ const Another = () => {
     });
   };
 
+
   // ---
   const formattedBlockData =
     blockData?.data?.length > 0
       ? blockData?.data?.map((i) => {
-          return {
-            id: i._id,
-            title: (
-              <div className="d-flex gap-2 " style={{ alignItems: "center" }}>
-                {i.title ? i.title : " Blocked Time"}
-                <FaLock />
-              </div>
-            ),
-            start: getCorrectTime(i.from),
-            end: getCorrectTime(i.to),
-            isBlock: true,
-          };
-        })
+        return {
+          id: i._id,
+          title: (
+            <div className="d-flex gap-2 " style={{ alignItems: "center" }}>
+              {i.title ? i.title : " Blocked Time"}
+              <FaLock />
+            </div>
+          ),
+          start: getCorrectTime(i.from),
+          end: getCorrectTime(i.to),
+          isBlock: true,
+        };
+      })
       : [];
 
   const events =
     data?.length > 0
       ? data?.flatMap((order) =>
-          order?.orders?.flatMap((item) => {
-            const firstName = item?.user?.firstName
-              ? item?.user?.firstName
-              : "";
-            const lastName = item?.user?.lastName ? item?.user?.lastName : "";
-            const isUserPresent =
-              item?.user === null || item?.user === undefined;
-            const fullName = isUserPresent
-              ? "User deleted"
-              : firstName + " " + lastName;
-            let adjustedStartTime = getCorrectTime(item?.toTime);
-            adjustedStartTime.setHours(adjustedStartTime.getHours());
-            const isSchedule =
-              isReschedule === true && selectedEventId === item?._id;
-            return {
-              title: item?.noShow ? (
-                <div className={`calender_slot`}>
-                  <div className="title-container">
-                    <p className="title">
-                      <span>{fullName}</span>
-                    </p>
-                    <FaBan style={{ color: "#FFF" }} />
-                  </div>
-                  <span className="no-show">No-Show</span>
+        order?.orders?.flatMap((item) => {
+          const firstName = item?.user?.firstName
+            ? item?.user?.firstName
+            : "";
+          const lastName = item?.user?.lastName ? item?.user?.lastName : "";
+          const isUserPresent =
+            item?.user === null || item?.user === undefined;
+          const fullName = isUserPresent
+            ? "User deleted"
+            : firstName + " " + lastName;
+          let adjustedStartTime = getCorrectTime(item?.toTime);
+          adjustedStartTime.setHours(adjustedStartTime.getHours());
+          const isSchedule =
+            isReschedule === true && selectedEventId === item?._id;
+          return {
+            title: item?.noShow ? (
+              <div className={`calender_slot`}>
+                <div className="title-container">
+                  <p className="title">
+                    <span>{fullName}</span>
+                  </p>
+                  <FaBan style={{ color: "#FFF" }} />
                 </div>
-              ) : (
-                <div className="calender_slot">
-                  <div className="title-container">
-                    <p className="title">
-                      <span>{fullName}</span>
-                    </p>
-                    {item?.user?.cardDetailSaved === true ? (
-                      <>
-                        <FaCreditCard />
-                        <FaThumbsUp />
-                        {item?.suggesstion?.length > 0 && <FaComment />}
-                      </>
-                    ) : (
+                <span className="no-show">No-Show</span>
+              </div>
+            ) : (
+              <div className="calender_slot">
+                <div className="title-container">
+                  <p className="title">
+                    <span>{fullName}</span>
+                  </p>
+                  {
+                    (item?.orderCreateThrough === 'Admin' || item?.orderCreateThrough === 'Sub-Admin')
+                      ? (item?.cardDetailSaved && (
+                        <>
+                          <FaCreditCard />
+                          <FaThumbsUp />
+                          {item?.suggesstion?.length > 0 && <FaComment />}
+                        </>
+                      ))
+                      : ((item?.cardDetailSaved) ? (
+                        <>
+                          <FaCreditCard />
+                          <FaThumbsUp />
+                          {item?.suggesstion?.length > 0 && <FaComment />}
+                        </>
+                      ):
                       item?.suggesstion?.length > 0 && <FaComment />
-                    )}
-                  </div>
+                    )
+                  }
 
-                  <div className="services-div">
-                    <ul>
-                      {item?.services?.map((names) => {
-                        const formattedStartTime =
-                          adjustedStartTime?.toLocaleTimeString("en-US", {
-                            hour: "numeric",
-                            minute: "numeric",
-                            hour12: true,
-                          });
-                        const adjustedEndTime = new Date(
-                          adjustedStartTime.getTime() + names?.totalMin * 60000
-                        );
 
-                        const formattedEndTime =
-                          adjustedEndTime.toLocaleTimeString("en-US", {
-                            hour: "numeric",
-                            minute: "numeric",
-                            hour12: true,
-                          });
 
-                        adjustedStartTime.setHours(adjustedEndTime.getHours());
-                        adjustedStartTime.setMinutes(
-                          adjustedEndTime.getMinutes()
-                        );
 
-                        return (
-                          <li>
-                            <span className="service-time">
-                              {" "}
-                              ({`${formattedStartTime} - ${formattedEndTime}`})
-                            </span>
-                            <span className="service-name">
-                              {" "}
-                              {names?.serviceId?.name}
-                            </span>
-                          </li>
-                        );
-                      })}
 
-                      {item?.AddOnservicesSchema?.map((names) => {
-                        const formattedStartTime =
-                          adjustedStartTime.toLocaleTimeString("en-US", {
-                            hour: "numeric",
-                            minute: "numeric",
-                            hour12: true,
-                          });
-
-                        const adjustedEndTimeAddon = new Date(
-                          adjustedStartTime.getTime() + names?.totalMin * 60000
-                        );
-
-                        const formattedEndTimeAddon =
-                          adjustedEndTimeAddon?.toLocaleTimeString("en-US", {
-                            hour: "numeric",
-                            minute: "numeric",
-                            hour12: true,
-                          });
-
-                        adjustedStartTime.setHours(
-                          adjustedEndTimeAddon.getHours()
-                        );
-                        adjustedStartTime.setMinutes(
-                          adjustedEndTimeAddon.getMinutes()
-                        );
-                        return (
-                          <li>
-                            <span className="service-time">
-                              {" "}
-                              (
-                              {`${formattedStartTime} - ${formattedEndTimeAddon}`}
-                              )
-                            </span>
-                            <span className="service-name">
-                              {" "}
-                              {names?.addOnservicesId?.name}
-                            </span>
-                          </li>
-                        );
-                      })}
-
-                      {item?.coupon?.type === "Birthday" &&
-                        renderBirthdayReward(
-                          item?.coupon?.addOnservicesId,
-                          adjustedStartTime
-                        )}
-                    </ul>
-                  </div>
                 </div>
-              ),
-              start: getCorrectTime(item?.toTime),
-              end: getCorrectTime(item?.fromTime),
-              id: item?._id,
-              isBlock: false,
-              isShow: item?.noShow,
-              fullName: fullName,
-              isReschedule: isSchedule,
-              paymentStatus: item.paymentStatus,
-            };
-          })
-        )
+
+                <div className="services-div">
+                  <ul>
+                    {item?.services?.map((names) => {
+                      const formattedStartTime =
+                        adjustedStartTime?.toLocaleTimeString("en-US", {
+                          hour: "numeric",
+                          minute: "numeric",
+                          hour12: true,
+                        });
+                      const adjustedEndTime = new Date(
+                        adjustedStartTime.getTime() + names?.totalMin * 60000
+                      );
+
+                      const formattedEndTime =
+                        adjustedEndTime.toLocaleTimeString("en-US", {
+                          hour: "numeric",
+                          minute: "numeric",
+                          hour12: true,
+                        });
+
+                      adjustedStartTime.setHours(adjustedEndTime.getHours());
+                      adjustedStartTime.setMinutes(
+                        adjustedEndTime.getMinutes()
+                      );
+
+                      return (
+                        <li>
+                          <span className="service-time">
+                            {" "}
+                            ({`${formattedStartTime} - ${formattedEndTime}`})
+                          </span>
+                          <span className="service-name">
+                            {" "}
+                            {names?.serviceId?.name}
+                          </span>
+                        </li>
+                      );
+                    })}
+
+                    {item?.AddOnservicesSchema?.map((names) => {
+                      const formattedStartTime =
+                        adjustedStartTime.toLocaleTimeString("en-US", {
+                          hour: "numeric",
+                          minute: "numeric",
+                          hour12: true,
+                        });
+
+                      const adjustedEndTimeAddon = new Date(
+                        adjustedStartTime.getTime() + names?.totalMin * 60000
+                      );
+
+                      const formattedEndTimeAddon =
+                        adjustedEndTimeAddon?.toLocaleTimeString("en-US", {
+                          hour: "numeric",
+                          minute: "numeric",
+                          hour12: true,
+                        });
+
+                      adjustedStartTime.setHours(
+                        adjustedEndTimeAddon.getHours()
+                      );
+                      adjustedStartTime.setMinutes(
+                        adjustedEndTimeAddon.getMinutes()
+                      );
+                      return (
+                        <li>
+                          <span className="service-time">
+                            {" "}
+                            (
+                            {`${formattedStartTime} - ${formattedEndTimeAddon}`}
+                            )
+                          </span>
+                          <span className="service-name">
+                            {" "}
+                            {names?.addOnservicesId?.name}
+                          </span>
+                        </li>
+                      );
+                    })}
+
+                    {item?.coupon?.type === "Birthday" &&
+                      renderBirthdayReward(
+                        item?.coupon?.addOnservicesId,
+                        adjustedStartTime
+                      )}
+                  </ul>
+                </div>
+              </div>
+            ),
+            start: getCorrectTime(item?.toTime),
+            end: getCorrectTime(item?.fromTime),
+            id: item?._id,
+            isBlock: false,
+            isShow: item?.noShow,
+            fullName: fullName,
+            isReschedule: isSchedule,
+            paymentStatus: item.paymentStatus,
+          };
+        })
+      )
       : [];
 
   const handleSelectSlot = (e) => {
