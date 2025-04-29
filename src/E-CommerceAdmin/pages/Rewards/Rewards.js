@@ -230,13 +230,13 @@ const Rewards = () => {
 
   const thead = [
     "Sno.",
-    "Sender User",
     "Title",
     "Code",
     "Price",
-    "Discount",
+    // "Discount",
     "Email",
     "Used",
+    "Provider",
     // "Order Status",
     // "Payment Status",
     "",
@@ -252,13 +252,13 @@ const Rewards = () => {
     ?.reverse()
     ?.map((i, index) => [
       `#${index + 1}`,
-      returnFullName(i?.senderUser),
       i?.title,
       i?.code,
       i?.price ? `$${i?.price}` : "",
-      i?.discount ? `$${i?.discount}` : "",
+      // i?.discount ? `$${i?.discount}` : "",
       i?.email ? i?.email : i?.user?.email,
       i?.used === true ? "Yes" : "No",
+      returnFullName(i?.senderUser),
       <span className="remove-icon" onClick={() => deleteHandler(i._id)}>
         <FaRegTrashAlt />
       </span>,
