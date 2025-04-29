@@ -57,7 +57,7 @@ export const AppointmentCanvas = ({ show, handleClose }) => {
     const payload = {
       suggestion: notes,
     };
-    const additionalFunctions = [fetchCart, () => setNotes("")];
+    const additionalFunctions = [fetchCart, () => setNotes(""), ()=>setCreatNote(false)];
     editApi({
       url: `api/v1/admin/addSuggestionToServiceCart/${userId}`,
       payload,
@@ -71,7 +71,7 @@ export const AppointmentCanvas = ({ show, handleClose }) => {
     const payload = {
       suggestion: notes,
     };
-    const additionalFunctions = [fetchCart, () => setNotes("")];
+    const additionalFunctions = [fetchCart, () => setNotes(""), ()=>setEdit(false)];
     editApi({
       url: `api/v1/admin/editSuggestionInCart/${userId}/${notesId}`,
       payload,

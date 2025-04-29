@@ -30,6 +30,9 @@ const Rewards = () => {
     },
   };
 
+  const [searchQuery, setSearchQuery] = useState("");
+
+
   const fetchData = async () => {
     getApi({
       url: "api/v1/admin/getAllcoupan",
@@ -61,7 +64,7 @@ const Rewards = () => {
       try {
         const { data } = await axios.get(`${Baseurl}api/v1/admin/getAllUser`);
         setUsers(data?.data?.reverse());
-      } catch {}
+      } catch { }
     };
 
     useEffect(() => {
@@ -234,26 +237,32 @@ const Rewards = () => {
     "Discount",
     "Email",
     "Used",
-    "Order Status",
-    "Payment Status",
+    // "Order Status",
+    // "Payment Status",
     "",
   ];
 
-  const tbody = data?.cart?.reverse()?.map((i, index) => [
-    `#${index + 1}`,
-    returnFullName(i?.senderUser),
-    i?.title,
-    i?.code,
-    i?.price ? `$${i?.price}` : "",
-    i?.discount ? `$${i?.discount}` : "",
-    i?.email ? i?.email : i?.user?.email,
-    i?.used === true ? "Yes" : "No",
-    <Badge>{i?.orderStatus}</Badge>,
-    <Badge>{i?.paymentStatus}</Badge>,
-    <span className="remove-icon" onClick={() => deleteHandler(i._id)}>
-      <FaRegTrashAlt />
-    </span>,
-  ]);
+  const filteredData = data?.cart
+    ?.filter((item) => {
+      const email = item?.email || item?.user?.email || "";
+      const code = item?.code || "";
+      const query = searchQuery?.toLowerCase();
+      return email?.toLowerCase()?.includes(query) || code.toLowerCase()?.includes(query);
+    })
+    ?.reverse()
+    ?.map((i, index) => [
+      `#${index + 1}`,
+      returnFullName(i?.senderUser),
+      i?.title,
+      i?.code,
+      i?.price ? `$${i?.price}` : "",
+      i?.discount ? `$${i?.discount}` : "",
+      i?.email ? i?.email : i?.user?.email,
+      i?.used === true ? "Yes" : "No",
+      <span className="remove-icon" onClick={() => deleteHandler(i._id)}>
+        <FaRegTrashAlt />
+      </span>,
+    ]);
 
   return (
     <>
@@ -269,15 +278,27 @@ const Rewards = () => {
           >
             All Purchased Gift Card's ( Total : {data?.cart?.length || 0} )
           </span>
-          <button
+          {/* <button
             className="md:py-2 px-3 md:px-4 py-1 rounded-sm bg-[#042b26] text-white tracking-wider"
             onClick={() => setModalShow(true)}
           >
             Create
-          </button>
+          </button> */}
+        </div>
+        <div className="filterBox">
+          <img
+            src="https://t4.ftcdn.net/jpg/01/41/97/61/360_F_141976137_kQrdYIvfn3e0RT1EWbZOmQciOKLMgCwG.jpg"
+            alt=""
+          />
+          <input
+            type="search"
+            placeholder="Start typing to search for gift cards"
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+
         </div>
 
-        <TableLayout thead={thead} tbody={tbody} loading={loading} />
+        <TableLayout thead={thead} tbody={filteredData} loading={loading} />
       </section>
     </>
   );
