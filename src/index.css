@@ -2577,6 +2577,7 @@ td {
   display: flex;
   justify-content: space-between;
   padding: 20px;
+  margin-top: 1rem;
 }
 .Booked_Detail .define_notes form {
   width: 90%;

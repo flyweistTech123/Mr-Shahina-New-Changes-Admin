@@ -12,9 +12,13 @@ import { FaRegTrashAlt } from "react-icons/fa";
 const returnFullName = (item) => {
   if (item?.fullName) {
     return item.fullName;
-  } else {
-    return (item?.firstName || "") + " " + (item?.lastName || "");
   }
+
+  const firstName = item?.firstName || "";
+  const lastName = item?.lastName || "";
+  const fullName = `${firstName} ${lastName}`.trim();
+
+  return fullName || "-";
 };
 
 const Rewards = () => {
