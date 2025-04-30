@@ -256,7 +256,7 @@ const Rewards = () => {
     ?.reverse()
     ?.map((i, index) => [
       `#${index + 1}`,
-      i?.title,
+      `${i?.type} Reward`,
       i?.code,
       i?.price ? `$${i?.price}` : "",
       // i?.discount ? `$${i?.discount}` : "",
