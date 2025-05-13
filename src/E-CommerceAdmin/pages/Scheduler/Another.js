@@ -171,25 +171,19 @@ const Another = () => {
                   <p className="title">
                     <span>{fullName}</span>
                   </p>
-                  {
-                    (item?.orderCreateThrough === 'Admin' || item?.orderCreateThrough === 'Sub-Admin')
-                      ? (item?.cardDetailSaved && (
-                        <>
-                          <FaCreditCard />
-                          <FaThumbsUp />
-                          {item?.suggesstion?.length > 0 && <FaComment />}
-                        </>
-                      ))
-                      : ((item?.cardDetailSaved) ? (
-                        <>
-                          <FaCreditCard />
-                          <FaThumbsUp />
-                          {item?.suggesstion?.length > 0 && <FaComment />}
-                        </>
-                      ):
-                      item?.suggesstion?.length > 0 && <FaComment />
-                    )
-                  }
+                  {item?.suggesstion?.length > 0 && <FaComment />}
+                  <>
+                    {item?.cardDetailSaved && <FaCreditCard />}
+
+                    {(item?.orderCreateThrough === 'Admin' || item?.orderCreateThrough === 'Sub-Admin') ? (
+                      item?.cardDetailSaved && <FaThumbsUp />
+                    ) : (
+                      <>
+                        {item?.cardDetailSaved && <FaThumbsUp />}
+                      </>
+                    )}
+                  </>
+
 
 
 
