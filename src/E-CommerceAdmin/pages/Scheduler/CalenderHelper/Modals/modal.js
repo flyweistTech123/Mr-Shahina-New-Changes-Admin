@@ -350,8 +350,8 @@ export const ServiceCanvas = ({
 
   const filteredService = searchTerm
     ? service?.filter((option) =>
-        option.name.toLowerCase().includes(searchTerm.toLowerCase())
-      )
+      option.name.toLowerCase().includes(searchTerm.toLowerCase())
+    )
     : service;
 
   const handleSizeChange = (selectedOption, productId) => {
@@ -692,16 +692,18 @@ export const DetailDialog = ({
   );
 };
 
-export const UserCanvas = ({ show, handleClose, userHandler }) => {
+export const UserCanvas = ({ show, handleClose, handleClose1, userHandler }) => {
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false);
   const [limit, setLimit] = useState(25);
   const [data, setData] = useState({});
   const [clientDialog, setClientDialog] = useState(false);
+  const [page, setPage] = useState(1);
+
 
   const fetchHandler = useCallback(() => {
     getApi({
-      url: `api/v1/admin/getAllUserforSearch?search=${search}&limit=${limit}&page=${1}`,
+      url: `api/v1/admin/getAllUserforSearch?search=${search}&limit=${limit}&page=${page}`,
       setResponse: setData,
       setLoading,
     });
@@ -709,9 +711,12 @@ export const UserCanvas = ({ show, handleClose, userHandler }) => {
 
   useEffect(() => {
     if (show) {
+      setPage(1);
       fetchHandler();
     } else {
-      setData({});
+      setLimit(25)
+      setSearch("");  // reset search input
+      setData({});    // clear user data
     }
   }, [show, fetchHandler]);
 
@@ -752,6 +757,11 @@ export const UserCanvas = ({ show, handleClose, userHandler }) => {
     disabled: loading,
   });
 
+  const close = () => {
+    handleClose()
+    handleClose1()
+  }
+
   return (
     <>
       <CreateClient
@@ -761,7 +771,7 @@ export const UserCanvas = ({ show, handleClose, userHandler }) => {
       />
       <Offcanvas
         show={show}
-        onHide={handleClose}
+        onHide={close}
         placement="bottom"
         style={{ width: "100%", height: "100%" }}
       >
@@ -777,6 +787,7 @@ export const UserCanvas = ({ show, handleClose, userHandler }) => {
             <input
               type="search"
               placeholder="search Client"
+              value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
           </div>
@@ -3016,9 +3027,8 @@ export const CheckoutCanvas = ({ show, handleClose, data, fetchCart }) => {
                       (i, index) =>
                         i?.tip !== 0 && (
                           <div
-                            className={`main ${
-                              tipAmount === i.tip ? "active" : ""
-                            }`}
+                            className={`main ${tipAmount === i.tip ? "active" : ""
+                              }`}
                             key={index}
                             onClick={() => selectTipHandler(i.tip)}
                           >
@@ -3212,8 +3222,8 @@ export const AddProductModal = ({ show, handleClose, addProduct }) => {
   const filterProducts =
     data?.data?.length > 0
       ? data?.data?.filter((i) =>
-          i?.name?.toLowerCase().includes(search?.toLowerCase())
-        )
+        i?.name?.toLowerCase().includes(search?.toLowerCase())
+      )
       : [];
 
   useEffect(() => {
@@ -3718,9 +3728,8 @@ export const UserGiftCard = ({ show, handleClose, data, fetchCart }) => {
                 <div className="coupons">
                   {giftCards?.map((i, index) => (
                     <div
-                      className={`item ${
-                        i?.code === couponCode ? "active" : ""
-                      }`}
+                      className={`item ${i?.code === couponCode ? "active" : ""
+                        }`}
                       onClick={() => setCouponCode(i?.code)}
                       key={`coupons${index}`}
                     >
@@ -4273,13 +4282,13 @@ export const TemplatePreviewModalXl = ({ show, handleClose, title, body }) => {
         {title && (
           <h6
             dangerouslySetInnerHTML={{ __html: title.replace(/\n/g, "<br />") }}
-            // className="mt-5"
+          // className="mt-5"
           ></h6>
         )}
         {body && (
           <p
             dangerouslySetInnerHTML={{ __html: body.replace(/\n/g, "<br />") }}
-            // className="mt-5"
+          // className="mt-5"
           ></p>
         )}
       </Modal.Body>
@@ -4300,13 +4309,13 @@ export const TemplatePreviewModalSM = ({ show, handleClose, title, body }) => {
         {title && (
           <h6
             dangerouslySetInnerHTML={{ __html: title.replace(/\n/g, "<br />") }}
-            // className=""
+          // className=""
           ></h6>
         )}
         {body && (
           <p
             dangerouslySetInnerHTML={{ __html: body.replace(/\n/g, "<br />") }}
-            // className="mt-5"
+          // className="mt-5"
           ></p>
         )}
       </Modal.Body>

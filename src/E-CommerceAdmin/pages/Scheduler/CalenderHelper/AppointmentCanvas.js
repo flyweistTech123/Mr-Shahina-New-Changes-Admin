@@ -463,6 +463,7 @@ export const AppointmentCanvas = ({ show, handleClose }) => {
       <UserCanvas
         show={userVisible}
         handleClose={closeUser}
+        handleClose1={handleClose}
         userHandler={userHandler}
       />
       <EditNotes
