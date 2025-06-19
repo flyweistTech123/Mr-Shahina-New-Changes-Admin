@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { Modal, Offcanvas, Form, Button } from "react-bootstrap";
 import PhoneInput from "react-phone-input-2";
 import { useDispatch, useSelector } from "react-redux";
@@ -701,24 +701,36 @@ export const UserCanvas = ({ show, handleClose, handleClose1, userHandler }) => 
   const [page, setPage] = useState(1);
 
 
+  const controllerRef = useRef(null);
+
   const fetchHandler = useCallback(() => {
+    if (controllerRef.current) {
+      controllerRef.current.abort();
+    }
+
+    const controller = new AbortController();
+    controllerRef.current = controller;
+
     getApi({
       url: `api/v1/admin/getAllUserforSearch?search=${search}&limit=${limit}&page=${page}`,
       setResponse: setData,
       setLoading,
+      options: { signal: controller.signal },
     });
-  }, [search, limit]);
+  }, [search, limit, page]);
 
-  useEffect(() => {
+
+ useEffect(() => {
+  const delayDebounce = setTimeout(() => {
     if (show) {
       setPage(1);
       fetchHandler();
-    } else {
-      setLimit(25)
-      setSearch("");  // reset search input
-      setData({});    // clear user data
     }
-  }, [show, fetchHandler]);
+  }, 400); // delay in ms
+
+  return () => clearTimeout(delayDebounce);
+}, [search, limit, show, fetchHandler]);
+
 
   const hasMore = data?.data?.totalDocs > data?.data?.docs?.length;
 
