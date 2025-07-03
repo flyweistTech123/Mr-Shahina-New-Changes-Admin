@@ -41,6 +41,8 @@ const EditProduct = () => {
   const [skinConditionId, setSkinConditionId] = useState("");
   const [brandId, setBrandId] = useState("");
 
+  const [showAddToCart, setShowAddToCart] = useState(null);
+
   const descObject = {
     step,
     stepDescription,
@@ -151,7 +153,7 @@ const EditProduct = () => {
         `${process.env.React_App_Baseurl}api/v1/Product/${product}`
       );
       setData(response.data.data);
-    } catch {}
+    } catch { }
   };
 
   useEffect(() => {
@@ -172,6 +174,7 @@ const EditProduct = () => {
       setProductTypeId(data?.productTypeId);
       setSkinConditionId(data?.skinConditionId);
       setBrandId(data?.brandId?._id);
+      setShowAddToCart(data?.isShowAddToCart);
       setBenefit(data?.benfit?.length > 0 ? data?.benfit?.[0] : "");
       setMultipleSize(data?.multipleSize === true ? "true" : "false");
       if (data?.howTouse?.length > 0) {
@@ -262,6 +265,7 @@ const EditProduct = () => {
   if (considerAcne) {
     fd.append("considerAcne", considerAcne);
   }
+  fd.append("isShowAddToCart", showAddToCart);
 
   const createProduct = async (e) => {
     e.preventDefault();
@@ -564,6 +568,27 @@ const EditProduct = () => {
               value={considerAcne}
               onChange={(e) => setConsiderAcne(e.target.value)}
             />
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Show Add to Cart / Price / Quantity</Form.Label>
+            <div>
+              <Form.Check
+                type="radio"
+                label="Yes"
+                name="showAddToCart"
+                value="yes"
+                checked={showAddToCart === true}
+                onChange={() => setShowAddToCart(true)}
+              />
+              <Form.Check
+                type="radio"
+                label="No"
+                name="showAddToCart"
+                value="no"
+                checked={showAddToCart === false}
+                onChange={() => setShowAddToCart(false)}
+              />
+            </div>
           </Form.Group>
 
           <div className="w-100 d-flex justify-content-between">

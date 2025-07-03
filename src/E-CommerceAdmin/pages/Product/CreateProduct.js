@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { Form, Button, Spinner } from "react-bootstrap";
 import Select from "react-select";
 import ReactQuill from "react-quill";
-import {  ViewDescription } from "../../../Helper/Helper";
+import { ViewDescription } from "../../../Helper/Helper";
 import { getApi, postApi } from "../../../Respo/Api";
 
 const CreateProduct = () => {
@@ -43,6 +43,7 @@ const CreateProduct = () => {
   const [returnPolicy, setReturnPolicy] = useState("");
   const [acneType, setAcneType] = useState("");
   const [considerAcne, setConsiderAcne] = useState("");
+  const [showAddToCart, setShowAddToCart] = useState(null);
 
   const descObject = {
     step,
@@ -150,6 +151,7 @@ const CreateProduct = () => {
   fd.append("returnPolicy", returnPolicy);
   fd.append("acneType", acneType);
   fd.append("considerAcne", considerAcne);
+  fd.append("isShowAddToCart", showAddToCart);
 
   const createProduct = async (e) => {
     e.preventDefault();
@@ -450,7 +452,7 @@ const CreateProduct = () => {
             </Form.Select>
           </Form.Group>
 
-              
+
 
           {multipleSize === "false" ? (
             <>
@@ -655,6 +657,27 @@ const CreateProduct = () => {
             />
           </Form.Group>
 
+          <Form.Group className="mb-3">
+            <Form.Label>Show Add to Cart / Price / Quantity</Form.Label>
+            <div>
+              <Form.Check
+                type="radio"
+                label="Yes"
+                name="showAddToCart"
+                value="yes"
+                checked={showAddToCart === true}
+                onChange={() => setShowAddToCart(true)}
+              />
+              <Form.Check
+                type="radio"
+                label="No"
+                name="showAddToCart"
+                value="no"
+                checked={showAddToCart === false}
+                onChange={() => setShowAddToCart(false)}
+              />
+            </div>
+          </Form.Group>
           <div className="w-100 d-flex justify-content-between">
             <Button variant="success" type="submit">
               {submitLoading ? (
